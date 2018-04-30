@@ -1,0 +1,261 @@
+@font-face {
+  font-family: "Kiro";
+  src: url("../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.woff2") format("woff2"), url("../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.woff") format("woff"), url("../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.ttf") format("truetype"), url("../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.svg#svgFontName") format("svg");
+  /* Legacy iOS */
+  font-family: "KiroBold";
+  src: url("../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.woff2") format("woff2"), url("../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.woff") format("woff"), url("../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.ttf") format("truetype"), url("../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.svg#svgFontName") format("svg");
+  /* Legacy iOS */
+  font-family: "KiroLight";
+  src: url("../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.eot?#iefix") format("embedded-opentype"), url("../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.woff2") format("woff2"), url("../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.woff") format("woff"), url("../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.ttf") format("truetype"), url("../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.svg#svgFontName") format("svg");
+  /* Legacy iOS */
+}
+html {
+  font-size: 20px;
+  font-family: "Kiro", Arial, sans-serif;
+}
+
+a {
+  color: #4D0092;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.csr-logo_purple {
+  font-family: "KiroBold", Arial, sans-serif;
+  color: #4D0092;
+}
+
+.csr-logo_blue {
+  font-family: "KiroBold", Arial, sans-serif;
+  color: #8BC6FF;
+}
+
+.csr-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.csr-layout__wrapper {
+  position: relative;
+  padding: 1rem;
+  background: white;
+  border: 1px solid #dddbda;
+  border-radius: 0.25rem;
+  background-clip: padding-box;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+  width: 425px;
+}
+
+.csr-layout__header {
+  border-bottom: 1px solid #dddbda;
+}
+
+.csr-layout__footer {
+  border-top: 1px solid #dddbda;
+}
+
+.csr-start div,
+.csr-start button {
+  z-index: 1;
+}
+
+.csr-start__title {
+  position: absolute;
+  top: 0;
+  left: -5000px;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.scr-start__selector-wrapper {
+  position: relative;
+}
+
+.scr-start__selector {
+  border: none;
+  padding: 5px 0;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.scr-start__selector-icon {
+  font-size: 1rem;
+  color: #4D0092;
+}
+.scr-start__selector-icon .fa-angle-down {
+  display: none;
+}
+.scr-start__selector-icon.scr-start__selector-icon_is-open .fa-angle-down {
+  display: inline-block;
+}
+.scr-start__selector-icon.scr-start__selector-icon_is-open .fa-angle-right {
+  display: none;
+}
+
+.scr-start__selector-text {
+  font-family: "KiroBold", Arial, sans-serif;
+  display: inline-block;
+  text-align: left;
+  width: 150px;
+  color: #4D0092;
+  border-bottom: 3px solid #4D0092;
+  font-size: 1rem;
+  padding-bottom: 3px;
+}
+
+.scr-start__menu {
+  width: 150px;
+  position: absolute;
+  border: 1px solid #dddbda;
+  background-color: #fff;
+  z-index: 99;
+  overflow: visible;
+  top: 45px;
+  display: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.51);
+}
+.scr-start__menu.scr-start__menu_is-open {
+  display: block;
+}
+
+.scr-start__menu-btn {
+  display: block;
+  border: none;
+  width: 100%;
+  padding: 5px;
+  font-size: 1rem;
+  z-index: 99;
+  background: transparent;
+}
+.scr-start__menu-btn:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.scr-start__menu-btn:hover {
+  background-color: #efefef;
+}
+
+.scr-start__actions {
+  width: 100%;
+  text-align: center;
+}
+
+.csr-start__submit {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  border-radius: 8px;
+  padding: 10px 150px 15px 150px;
+  background-color: #4D0092;
+  color: #fff;
+  margin: 15px auto;
+}
+
+.scr-calc__header {
+  width: 100%;
+  background-color: #F5A623;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scr-calc__title {
+  font-size: 1.25rem;
+}
+
+.src-calc__user-type {
+  position: relative;
+  background: #fff;
+  border-radius: 34px;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: #000;
+  padding: 0 10px 0 25px;
+  margin-left: 20px;
+}
+.src-calc__user-type span {
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #F5A623;
+}
+
+.scr-calc__fieldset-title {
+  font-family: "KiroLight", Arial, sans-serif;
+}
+
+.src-calc__cta-share {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 1.25rem;
+  margin-right: 20px;
+}
+
+.src-calc__cta-share-text {
+  position: absolute;
+  top: 0;
+  left: -5000px;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.src-calc__percentage {
+  font-family: "KiroBold", Arial, sans-serif;
+  font-size: 2rem;
+  color: #F5A623;
+}
+
+.src-calc__description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.desc-text,
+.desc-visual {
+  display: block;
+  width: 50%;
+}
+
+.src-calc__desc-icon {
+  color: #ccc;
+}
+.src-calc__desc-icon.src-calc__desc-icon_selected {
+  color: #F5A623;
+}
+
+.scr-calc__update {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  border-radius: 8px;
+  padding: 10px 150px 15px 150px;
+  background-color: #4D0092;
+  color: #fff;
+  margin: 15px auto;
+}

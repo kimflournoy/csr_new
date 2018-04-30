@@ -1,0 +1,299 @@
+// This file generates styles.css
+//CONSTANTS
+
+$purple: #4D0092;
+$blue_light: #8BC6FF;
+$orange: #F5A623;
+$text_default: #4A4A4A;
+$text_light: #706E6B;
+$text_link: #0070d2;
+$text_confirm: #417505;
+$text_error: #FF0000;
+
+$border_med: #dddbda;
+
+$screen_xs: 480px;
+$screen_sm: 768px;
+$screen_md: 992px;
+$screen_lg: 1200px;
+$screen_xlg: 1600px;
+
+@font-face {
+    font-family: 'Kiro';
+    src: url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-family: 'KiroBold';
+    src: url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-family: 'KiroLight';
+    src: url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+              url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.woff2') format('woff2'), /* Super Modern Browsers */
+              url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.woff') format('woff'), /* Pretty Modern Browsers */
+              url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+              url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+//MIXINS
+
+//Text mixins
+
+@mixin text_bold {
+  font-family: 'KiroBold', Arial, sans-serif;
+}
+@mixin text_light {
+    font-family: 'KiroLight', Arial, sans-serif;
+  }
+
+@mixin text_italic {
+  //font-family if different
+  font-style: italic;
+}
+
+@mixin text-truncate {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+ }
+
+
+// Accessibility mixins
+
+@mixin screen-reader-only {
+  position: absolute;
+  top: 0;
+  left: -5000px;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+// Design Pattern mixins
+
+@mixin card {
+  position: relative;
+  padding: 1rem;
+  background: white;
+  border: 1px solid $border_med;
+  border-radius: 0.25rem;
+  background-clip: padding-box;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+ //SPECIFIC CLASSES
+ 
+ //LAYOUT
+html {
+  font-size: 20px;
+  font-family: 'Kiro', Arial, sans-serif;
+}
+
+a {
+  color: $purple;
+  text-decoration: none;
+  &:hover {
+      text-decoration: underline;
+  }
+}
+.csr-logo_purple {
+  @include text_bold;
+  color: $purple;  
+}
+.csr-logo_blue {
+  @include text_bold;
+  color: $blue_light; 
+}
+ .csr-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+ .csr-layout__wrapper {
+  @include card;
+  width: 425px;
+}
+.csr-layout__header {
+  border-bottom: 1px solid $border_med;
+}
+.csr-layout__footer {
+  border-top: 1px solid $border_med;
+}
+.csr-start div,
+.csr-start button {
+  z-index: 1;
+}
+.csr-start__title {
+  @include screen-reader-only;
+}
+.scr-start__selector-wrapper {
+  position: relative;
+}
+.scr-start__selector {
+  border: none;
+  padding: 5px 0;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+.scr-start__selector-icon {
+  font-size: 1rem;
+  color: $purple;
+  .fa-angle-down {
+    display: none;
+  }
+  &.scr-start__selector-icon_is-open {
+    .fa-angle-down {
+      display: inline-block;
+    }
+    .fa-angle-right {
+      display: none;
+    }
+  }
+}
+
+.scr-start__selector-text {
+  @include text-bold;
+  display: inline-block;
+  text-align: left;
+  width: 150px;
+  color: $purple;
+  border-bottom: 3px solid $purple;
+  font-size: 1rem;
+  padding-bottom: 3px;
+}
+.scr-start__menu {
+  width: 150px;
+  position: absolute;
+  border: 1px solid $border_med;
+  background-color: #fff;
+  z-index: 99;
+  overflow: visible;
+  top: 45px;
+  display: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0px 4px 3px 0px rgba(0,0,0,0.51);
+  &.scr-start__menu_is-open {
+    display: block;
+  }
+}
+.scr-start__menu-btn {
+  display: block;
+  border: none;
+  width: 100%;
+  padding: 5px;
+  font-size: 1rem;
+  z-index: 99;
+  background: transparent;
+  &:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;  
+  }
+  &:hover {
+    background-color: #efefef;
+  }
+}
+
+.scr-start__actions {
+  width: 100%;
+  text-align: center;
+}
+.csr-start__submit {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  border-radius: 8px;
+  padding: 10px 150px 15px 150px;
+  background-color: $purple;
+  color: #fff;
+  margin: 15px auto;
+}
+
+.scr-calc__header {
+  width: 100%;
+  background-color: $orange;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.scr-calc__title {
+  font-size: 1.25rem;
+}
+.src-calc__user-type {
+    position: relative;
+    background: #fff;
+    border-radius: 34px;
+    font-size: .75rem;
+    //height: 1.25rem;
+    line-height: 1.25rem;
+    color: #000;
+    padding: 0 10px 0 25px;
+    margin-left: 20px;
+    span {
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: $orange;
+    }
+}
+.scr-calc__fieldset-title {
+  @include text_light;
+}
+.src-calc__cta-share {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 1.25rem;
+  margin-right: 20px;
+}
+.src-calc__cta-share-text {
+  @include screen-reader-only;
+}
+
+.src-calc__percentage {
+    @include text_bold;
+    font-size: 2rem;
+    color: $orange;
+}
+.src-calc__description {
+    display: flex;
+    justify-content: space-between;
+}
+.desc-text,
+.desc-visual {
+    display: block;
+    width: 50%;
+}
+.src-calc__desc-icon {
+  color: #ccc;
+  &.src-calc__desc-icon_selected {
+    color: $orange;
+  }
+}
+.scr-calc__update {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  border-radius: 8px;
+  padding: 10px 150px 15px 150px;
+  background-color: $purple;
+  color: #fff;
+  margin: 15px auto;
+}
