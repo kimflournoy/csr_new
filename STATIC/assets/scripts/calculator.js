@@ -64,6 +64,12 @@ function addClass(e, c) {
     }
 }
 
+function showElement(e) {
+    var element;
+    element = e;
+    element.classList.remove("hidden");
+}
+
 function displayUserInfo(u) {
   if(u === "warrior") {
     addClass(document.getElementById("src-calc__user-info_doctor"), "hidden");
@@ -73,9 +79,63 @@ function displayUserInfo(u) {
   }
 }
 
-function displayCancerInfo(c) {
+function displayBigCInfo(c) {
   document.getElementById("scr-calc__title").innerHTML = c;
   addClass(document.getElementById("csr-layout__main"), "csr-layout__main_" + bigc_selected);
+}
+
+function displayBigCButtons(c, u) {
+  
+  var button_sex = false, button_age = false, button_stage = false, button_grade = false, button_time = false;
+
+  switch(c) {
+    case "colon":
+      button_sex = true;
+      button_age = true;
+      button_stage = true;
+      button_grade = true;
+      button_time = true;
+      break;
+    case "breast":
+      button_sex = false;
+      button_age = true;
+      button_stage = true;
+      button_grade = true;
+      button_time = true;
+      break;
+    case "melanoma":
+      button_sex = true;
+      button_age = true;
+      button_stage = true;
+      button_grade = false;
+      button_time = true;
+      break;
+    case "appendix":
+      button_sex = false;
+      button_age = false;
+      button_stage = false;
+      button_grade = false;
+      button_time = false;
+      break;
+    default:
+      break;
+  }
+  if(button_sex) {
+    showElement(document.getElementById("src-calc__filter_sex"));
+  }
+  if(button_age) {
+    showElement(document.getElementById("src-calc__filter_age"));
+  }
+  if(button_stage) {
+    showElement(document.getElementById("src-calc__filter_stage"));
+  }
+  if(button_grade) {
+    showElement(document.getElementById("src-calc__filter_grade"));
+  }
+  if(button_time) {
+    showElement(document.getElementById("src-calc__filter_time"));
+  }
+
 }
 
 
@@ -87,7 +147,8 @@ function getCalcInfo() {
   }
   else {
     displayUserInfo(user_selected);
-    displayCancerInfo(bigc_selected);
+    displayBigCInfo(bigc_selected);
+    displayBigCButtons(bigc_selected, user_selected);
   }
 }
 
