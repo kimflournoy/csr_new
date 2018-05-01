@@ -87,7 +87,6 @@ function displayBigCInfo(c) {
 function displayBigCButtons(c, u) {
   
   var button_sex = false, button_age = false, button_stage = false, button_grade = false, button_time = false;
-
   switch(c) {
     case "colon":
       button_sex = true;
@@ -139,7 +138,7 @@ function displayBigCButtons(c, u) {
 }
 
 
-function getCalcInfo() {
+function getCalcInfo() { // set up the form on page load
   getCalcTypes();
   if(bigc_selected === "error" || user_selected === "error") {
     alert("There appears to be an error - please try again");
@@ -153,5 +152,46 @@ function getCalcInfo() {
 }
 
 
-
+function showBottomPanel(cat) {
+  // hide everything first
+  addClass(document.getElementById("scr-calc__fieldset_sex"), "hidden");
+  addClass(document.getElementById("scr-calc__fieldset_age"), "hidden");
+  addClass(document.getElementById("scr-calc__fieldset_stage"), "hidden");
+  addClass(document.getElementById("scr-calc__fieldset_grade"), "hidden");
+  addClass(document.getElementById("scr-calc__fieldset_time"), "hidden");
+  
+  addClass(document.getElementById("scr-calc__help"), "hidden");
+  addClass(document.getElementById("scr-calc__questions"), "hidden");
+  addClass(document.getElementById("scr-calc__share"), "hidden");
+  
+  switch(cat) {
+    case "sex":
+      showElement(document.getElementById("scr-calc__fieldset_sex"));
+      break;
+    case "age":
+      showElement(document.getElementById("scr-calc__fieldset_age"));
+      break;
+    case "stage":
+      showElement(document.getElementById("scr-calc__fieldset_stage"));
+      break;
+    case "grade":
+      showElement(document.getElementById("scr-calc__fieldset_grade"));
+      break;
+    case "time":
+      showElement(document.getElementById("scr-calc__fieldset_time"));
+      break;
+    case "help":
+      showElement(document.getElementById("scr-calc__help"));
+      break;
+    case "questions":
+      showElement(document.getElementById("scr-calc__questions"));
+      break;
+    case "share":
+      showElement(document.getElementById("scr-calc__share"));
+      break;
+    default:
+      break;
+  }
+  
+}
 
