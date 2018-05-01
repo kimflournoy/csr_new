@@ -1,11 +1,21 @@
 // This file generates styles.css
 //CONSTANTS
 
+
+$pink: #C24F72; // breast
+$red: #C21824; // melanoma
+$blue: #3566C2; // colon
+$yellow: #FFCC33; // appendix
+
+
 $purple: #4D0092;
 $blue_light: #8BC6FF;
-$orange: #F5A623;
+
+// $orange: #F5A623;
+
 $text_default: #4A4A4A;
 $text_light: #706E6B;
+$text_dark: #545454;
 $text_link: #0070d2;
 $text_confirm: #417505;
 $text_error: #FF0000;
@@ -93,6 +103,44 @@ $screen_xlg: 1600px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
+@mixin set-colors($type) {
+  
+  @if $type == "background" {
+    .csr-layout__main_colon & {
+      background-color: $blue;
+      color: #fff;
+    }
+    .csr-layout__main_breast & {
+      background-color: $pink;
+      color: #fff;
+    }
+    .csr-layout__main_melanoma & {
+      background-color: $red;
+      color: #fff;
+    }
+  
+    .csr-layout__main_appendix & {
+      background-color: $yellow;
+      color: $text_dark;
+    }
+  }
+  @else if $type == "text" {
+    .csr-layout__main_colon & {
+      color: $blue;
+    }
+    .csr-layout__main_breast & {
+      color: $pink;
+    }
+    .csr-layout__main_melanoma & {
+      color: $red;
+    }
+  
+    .csr-layout__main_appendix & {
+      color: $yellow;
+    }
+  }
+}
+
 
  //SPECIFIC CLASSES
  
@@ -109,6 +157,11 @@ a {
       text-decoration: underline;
   }
 }
+
+.hidden {
+  display: none;
+}
+
 .csr-logo_purple {
   @include text_bold;
   color: $purple;  
@@ -223,14 +276,17 @@ a {
 
 .scr-calc__header {
   width: 100%;
-  background-color: $orange;
-  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
+  @include set-colors("background");
+ 
 }
 .scr-calc__title {
   font-size: 1.25rem;
+  text-transform: uppercase;
+  @include text_light;
 }
 .src-calc__user-type {
     position: relative;
@@ -242,7 +298,7 @@ a {
     color: #000;
     padding: 0 10px 0 25px;
     margin-left: 20px;
-    span {
+    span:first-child {
         display: block;
         position: absolute;
         top: 5px;
@@ -250,7 +306,11 @@ a {
         width: 15px;
         height: 15px;
         border-radius: 50%;
-        background-color: $orange;
+
+        @include set-colors("background");
+    }
+    .src-calc__user-type-info {
+      @include screen-reader-only;
     }
 }
 .scr-calc__fieldset-title {
@@ -270,7 +330,7 @@ a {
 .src-calc__percentage {
     @include text_bold;
     font-size: 2rem;
-    color: $orange;
+    @include set-colors("text");
 }
 .src-calc__description {
     display: flex;
@@ -284,7 +344,7 @@ a {
 .src-calc__desc-icon {
   color: #ccc;
   &.src-calc__desc-icon_selected {
-    color: $orange;
+    @include set-colors("text");
   }
 }
 .scr-calc__update {

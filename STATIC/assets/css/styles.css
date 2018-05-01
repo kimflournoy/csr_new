@@ -28,6 +28,10 @@ a:hover {
   text-decoration: underline;
 }
 
+.hidden {
+  display: none;
+}
+
 .csr-logo_purple {
   font-family: "KiroBold", Arial, sans-serif;
   color: #4D0092;
@@ -168,15 +172,31 @@ a:hover {
 
 .scr-calc__header {
   width: 100%;
-  background-color: #F5A623;
-  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.csr-layout__main_colon .scr-calc__header {
+  background-color: #3566C2;
+  color: #fff;
+}
+.csr-layout__main_breast .scr-calc__header {
+  background-color: #C24F72;
+  color: #fff;
+}
+.csr-layout__main_melanoma .scr-calc__header {
+  background-color: #C21824;
+  color: #fff;
+}
+.csr-layout__main_appendix .scr-calc__header {
+  background-color: #FFCC33;
+  color: #545454;
+}
 
 .scr-calc__title {
   font-size: 1.25rem;
+  text-transform: uppercase;
+  font-family: "KiroLight", Arial, sans-serif;
 }
 
 .src-calc__user-type {
@@ -189,7 +209,7 @@ a:hover {
   padding: 0 10px 0 25px;
   margin-left: 20px;
 }
-.src-calc__user-type span {
+.src-calc__user-type span:first-child {
   display: block;
   position: absolute;
   top: 5px;
@@ -197,7 +217,34 @@ a:hover {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #F5A623;
+}
+.csr-layout__main_colon .src-calc__user-type span:first-child {
+  background-color: #3566C2;
+  color: #fff;
+}
+.csr-layout__main_breast .src-calc__user-type span:first-child {
+  background-color: #C24F72;
+  color: #fff;
+}
+.csr-layout__main_melanoma .src-calc__user-type span:first-child {
+  background-color: #C21824;
+  color: #fff;
+}
+.csr-layout__main_appendix .src-calc__user-type span:first-child {
+  background-color: #FFCC33;
+  color: #545454;
+}
+.src-calc__user-type .src-calc__user-type-info {
+  position: absolute;
+  top: 0;
+  left: -5000px;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 .scr-calc__fieldset-title {
@@ -228,7 +275,18 @@ a:hover {
 .src-calc__percentage {
   font-family: "KiroBold", Arial, sans-serif;
   font-size: 2rem;
-  color: #F5A623;
+}
+.csr-layout__main_colon .src-calc__percentage {
+  color: #3566C2;
+}
+.csr-layout__main_breast .src-calc__percentage {
+  color: #C24F72;
+}
+.csr-layout__main_melanoma .src-calc__percentage {
+  color: #C21824;
+}
+.csr-layout__main_appendix .src-calc__percentage {
+  color: #FFCC33;
 }
 
 .src-calc__description {
@@ -245,8 +303,17 @@ a:hover {
 .src-calc__desc-icon {
   color: #ccc;
 }
-.src-calc__desc-icon.src-calc__desc-icon_selected {
-  color: #F5A623;
+.csr-layout__main_colon .src-calc__desc-icon.src-calc__desc-icon_selected {
+  color: #3566C2;
+}
+.csr-layout__main_breast .src-calc__desc-icon.src-calc__desc-icon_selected {
+  color: #C24F72;
+}
+.csr-layout__main_melanoma .src-calc__desc-icon.src-calc__desc-icon_selected {
+  color: #C21824;
+}
+.csr-layout__main_appendix .src-calc__desc-icon.src-calc__desc-icon_selected {
+  color: #FFCC33;
 }
 
 .scr-calc__update {

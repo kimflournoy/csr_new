@@ -17,56 +17,14 @@
                 <div class="csr-header__logo"><span class="csr-logo_purple">Cancer</span><span class="csr-logo_blue">Survival</span><span class="csr-logo_purple">Rates</span><span class="csr-logo_blue">.org</span></div>
             </header>
           </div>
-          <div class="csr-layout__main">
+          <div class="csr-layout__main" id="csr-layout__main">
             <main class="csr-main">
-              <!-- start component -->
-              <div class="csr-start">
-                <h1 class="csr-start__title">Tell us about yourself to get started.</h1>
-                <p>I am a<br />
-                <div class="scr-start__selector-wrapper">
-                  <button type="button" class="scr-start__selector scr-start__selector_user">
-                    <span class="scr-start__selector-text">warrior</span>
-                    <!--
-                    Clicking the `scr-start__selector` button should add the class `scr-start__menu_is-open` to the menu div
-                    and `scr-start__selector-icon_is-open` to the selector-icon span.
-                    When a button is selected from the menu, the is-open classes should be removed and the `scr-start__selector` button text should be updated.
-                    -->
 
-                    <span class="scr-start__selector-icon">
-                        <span class="fas fa-angle-right"></span>
-                        <span class="fas fa-angle-down"></span>
-                    </span>
-                  </button>
-                  <div class="scr-start__menu">
-                    <button type="button" class="scr-start__menu-btn">warrior</button>
-                    <button type="button" class="scr-start__menu-btn">doctor</button>
-                  </div>
-                </div>
-                searching for answers on<br />
-                <div class="scr-start__selector-wrapper">
-                  <button type="button" class="scr-start__selector scr-start__selector_type">
-                    <span class="scr-start__selector-text">pancreatic</span>
-                    <span class="scr-start__selector-icon scr-start__selector-icon_is-open">
-                        <span class="fas fa-angle-right"></span>
-                        <span class="fas fa-angle-down"></span>
-                  </span>
-                  </button>
-                  <div class="scr-start__menu scr-start__menu_is-open">
-                    <button type="button" class="scr-start__menu-btn">bladder</button>
-                    <button type="button" class="scr-start__menu-btn">brain</button>
-                    <button type="button" class="scr-start__menu-btn">breast</button>
-                    <button type="button" class="scr-start__menu-btn">pancreatic</button>
-                  </div>
-                </div>
-                cancer survival rates.
-                </p>
-                <div class="scr-start__actions"><button type="submit" class="csr-start__submit">go!</button></div>
-              </div>
               <!-- calculator component -->
               <div class="scr-calc">
                 <div class="scr-calc__header">
-                  <div class="src-calc__user-type"><span></span>patient</div>
-                  <h1 class="scr-calc__title">cancer type</h1>
+                  <div class="src-calc__user-type"><span></span><span class="src-calc__user-type-info">User type:</span><span id="src-calc__user-info_doctor">doctor</span><span id="src-calc__user-info_warrior">warrior</span></div>
+                  <h1 class="scr-calc__title" id="scr-calc__title">cancer type</h1>
                   <button type="button" class="src-calc__cta-share"><span class="fas fa-share-square"></span><span class="src-calc__cta-share-text"> share this info</span></button>
                 </div>
                 <div class="scr-calc__main">
