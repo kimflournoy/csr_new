@@ -1,2 +1,3 @@
 *.css.map
 *.sh
+.DS_Store
