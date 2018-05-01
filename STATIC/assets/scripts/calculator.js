@@ -1,5 +1,8 @@
 var bigc_selected = "";
 var user_selected = "";
+var percentage = 0;
+var number_hearts = 0;
+var survival_years = 0;
 
 
 function getUrlVars() { // Parse URL parameters
@@ -137,6 +140,57 @@ function displayBigCButtons(c, u) {
 
 }
 
+function calculateRate(c) {
+  // using fake data here
+
+  switch(c) {
+    case "colon":
+      percentage = 23;
+      survival_years = 3;
+      break;
+    case "breast":
+      percentage = 46;
+      survival_years = 10;
+      break;
+    case "melanoma":
+      percentage = 2;
+      survival_years = 2;
+      break;
+    case "appendix":
+      percentage = 99;
+      survival_years = 4;
+      break;
+    default:
+      break;
+  }
+
+  calculateHearts(percentage);
+  document.getElementById("src-calc__percentage").innerHTML = percentage + "%";
+  document.getElementById("src-calc__rate-years").innerHTML = survival_years;
+
+}
+
+function calculateHearts(p) {
+
+  var listItems = [];
+  var children = document.getElementById('src-calc__desc-visual').childNodes;
+
+  for(var i = 0, l=children.length; i<l; ++i) {
+      var child = children[i];
+      if(child.nodeType === 1 && child.classList.contains("src-calc__desc-icon")) {
+          listItems.push(child);
+      }
+  }
+
+  number_hearts = Math.floor(percentage / 10); // round down to the nearest 10
+
+  if(number_hearts == 0) { number_hearts = 1; } // showing 0 hearts seems cruel
+
+  for (var i = 0; i < number_hearts; i++) {
+        listItems[i].className += " " + "src-calc__desc-icon_selected";
+  }
+}
+
 
 function getCalcInfo() { // set up the form on page load
   getCalcTypes();
@@ -148,6 +202,7 @@ function getCalcInfo() { // set up the form on page load
     displayUserInfo(user_selected);
     displayBigCInfo(bigc_selected);
     displayBigCButtons(bigc_selected, user_selected);
+    calculateRate(bigc_selected);
   }
 }
 
