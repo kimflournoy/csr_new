@@ -4,6 +4,11 @@ var percentage = 0;
 var number_hearts = 0;
 var survival_years = 0;
 
+var selected_sex = "";
+var selected_age = "";
+var selected_stage = "";
+var selected_grade = "";
+var selected_time = "";
 
 function getUrlVars() { // Parse URL parameters
   var vars = {};
@@ -283,3 +288,32 @@ function showBottomPanel(cat) {
   
 }
 
+
+function updateBigCButtons(e) {
+
+  element = e;
+
+  switch(e.name) {
+    case "sex":
+      selected_sex = e.value;
+      document.getElementById("src-calc__filter-value_sex").innerHTML = selected_sex;
+      break;
+    // case "age":
+    //   break;
+    // case "stage":
+    //   break;
+    // case "grade":
+    //   break;
+    // case "time":
+    //   break;
+    default:
+      break;
+  }
+
+
+  // var selected_sex = "";
+  // var selected_age = "";
+  // var selected_stage = "";
+  // var selected_grade = "";
+  // var selected_time = "";
+}
