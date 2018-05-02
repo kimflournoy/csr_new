@@ -83,9 +83,11 @@ function showElement(e) {
 function displayUserInfo(u) {
   if(u === "warrior") {
     addClass(document.getElementById("src-calc__user-info_doctor"), "hidden");
+    addClass(document.getElementById("src-calc__cta-questions_doctor"), "hidden");
   }
   else if(u === "doctor") {
     addClass(document.getElementById("src-calc__user-info_warrior"), "hidden");
+    addClass(document.getElementById("src-calc__cta-questions_warrior"), "hidden");
   }
 }
 
@@ -224,7 +226,8 @@ function showBottomPanel(cat) {
   addClass(document.getElementById("scr-calc__fieldset_time"), "hidden");
   
   addClass(document.getElementById("scr-calc__help"), "hidden");
-  addClass(document.getElementById("scr-calc__questions"), "hidden");
+  addClass(document.getElementById("scr-calc__questions_warrior"), "hidden");
+  addClass(document.getElementById("scr-calc__questions_doctor"), "hidden");
   addClass(document.getElementById("scr-calc__share"), "hidden");
 
   removeClass(document.getElementById("src-calc__filter_sex"), "src-calc__filter_active");
@@ -233,7 +236,8 @@ function showBottomPanel(cat) {
   removeClass(document.getElementById("src-calc__filter_grade"), "src-calc__filter_active");
   removeClass(document.getElementById("src-calc__filter_time"), "src-calc__filter_active");
   removeClass(document.getElementById("src-calc__cta-help"), "src-calc__filter_active");
-  removeClass(document.getElementById("src-calc__cta-questions"), "src-calc__filter_active");
+  removeClass(document.getElementById("src-calc__cta-questions_warrior"), "src-calc__filter_active");
+  removeClass(document.getElementById("src-calc__cta-questions_doctor"), "src-calc__filter_active");
 
 
   
@@ -262,9 +266,13 @@ function showBottomPanel(cat) {
       showElement(document.getElementById("scr-calc__help"));
       addClass(document.getElementById("src-calc__cta-help"), "src-calc__filter_active");
       break;
-    case "questions":
-      showElement(document.getElementById("scr-calc__questions"));
-      addClass(document.getElementById("src-calc__cta-questions"), "src-calc__filter_active");
+    case "questions_warrior":
+      showElement(document.getElementById("scr-calc__questions_warrior"));
+      addClass(document.getElementById("src-calc__cta-questions_warrior"), "src-calc__filter_active");
+      break;
+    case "questions_doctor":
+      showElement(document.getElementById("scr-calc__questions_doctor"));
+      addClass(document.getElementById("src-calc__cta-questions_doctor"), "src-calc__filter_active");
       break;
     case "share":
       showElement(document.getElementById("scr-calc__share"));
