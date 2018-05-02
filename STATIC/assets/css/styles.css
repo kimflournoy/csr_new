@@ -251,7 +251,7 @@ a:hover {
   font-family: "KiroLight", Arial, sans-serif;
 }
 
-.src-calc__cta-share {
+.src-calc__cta-help {
   border: none;
   background: transparent;
   color: #fff;
@@ -259,7 +259,7 @@ a:hover {
   margin-right: 20px;
 }
 
-.src-calc__cta-share-text {
+.src-calc__cta-help-text {
   position: absolute;
   top: 0;
   left: -5000px;
@@ -316,6 +316,11 @@ a:hover {
   color: #FFCC33;
 }
 
+.scr-calc__footer {
+  position: relative;
+  padding-right: 100px;
+}
+
 .src-calc__filter {
   border: none;
   margin: 0;
@@ -342,6 +347,10 @@ a:hover {
 }
 .src-calc__filter_active {
   background-color: #706E6B;
+}
+.src-calc__filter.src-calc__cta-share {
+  position: absolute;
+  right: 0;
 }
 
 .scr-calc__update {

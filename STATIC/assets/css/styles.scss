@@ -341,14 +341,14 @@ a {
 .scr-calc__fieldset-title {
   @include text_light;
 }
-.src-calc__cta-share {
+.src-calc__cta-help {
   border: none;
   background: transparent;
   color: #fff;
   font-size: 1.25rem;
   margin-right: 20px;
 }
-.src-calc__cta-share-text {
+.src-calc__cta-help-text {
   @include screen-reader-only;
 }
 
@@ -373,6 +373,11 @@ a {
   }
 }
 
+.scr-calc__footer {
+  position: relative;
+  padding-right: 100px;
+}
+
 .src-calc__filter {
   @include reset-button;
   border-radius: 0.5rem;
@@ -384,6 +389,10 @@ a {
 
   &_active {
     background-color: $text_light;
+  }
+  &.src-calc__cta-share {
+    position: absolute;
+    right: 0;
   }
 }
 

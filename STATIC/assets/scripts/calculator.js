@@ -235,7 +235,7 @@ function showBottomPanel(cat) {
   removeClass(document.getElementById("src-calc__filter_stage"), "src-calc__filter_active");
   removeClass(document.getElementById("src-calc__filter_grade"), "src-calc__filter_active");
   removeClass(document.getElementById("src-calc__filter_time"), "src-calc__filter_active");
-  removeClass(document.getElementById("src-calc__cta-help"), "src-calc__filter_active");
+  removeClass(document.getElementById("src-calc__cta-share"), "src-calc__filter_active");
   removeClass(document.getElementById("src-calc__cta-questions_warrior"), "src-calc__filter_active");
   removeClass(document.getElementById("src-calc__cta-questions_doctor"), "src-calc__filter_active");
 
@@ -262,9 +262,9 @@ function showBottomPanel(cat) {
       showElement(document.getElementById("scr-calc__fieldset_time"));
       addClass(document.getElementById("src-calc__filter_time"), "src-calc__filter_active");
       break;
-    case "help":
-      showElement(document.getElementById("scr-calc__help"));
-      addClass(document.getElementById("src-calc__cta-help"), "src-calc__filter_active");
+    case "share":
+      showElement(document.getElementById("scr-calc__share"));
+      addClass(document.getElementById("src-calc__cta-share"), "src-calc__filter_active");
       break;
     case "questions_warrior":
       showElement(document.getElementById("scr-calc__questions_warrior"));
@@ -274,8 +274,8 @@ function showBottomPanel(cat) {
       showElement(document.getElementById("scr-calc__questions_doctor"));
       addClass(document.getElementById("src-calc__cta-questions_doctor"), "src-calc__filter_active");
       break;
-    case "share":
-      showElement(document.getElementById("scr-calc__share"));
+    case "help":
+      showElement(document.getElementById("scr-calc__help"));
       break;
     default:
       break;

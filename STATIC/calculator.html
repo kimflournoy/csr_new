@@ -25,7 +25,7 @@
                 <div class="scr-calc__header">
                   <div class="src-calc__user-type"><span></span><span class="src-calc__user-type-info">User type:</span><span id="src-calc__user-info_doctor">doctor</span><span id="src-calc__user-info_warrior">warrior</span></div>
                   <h1 class="scr-calc__title" id="scr-calc__title">cancer type</h1>
-                  <button type="button" class="src-calc__cta-share" onClick="showBottomPanel('share')"><span class="fas fa-share-square"></span><span class="src-calc__cta-share-text"> share this info</span></button>
+                  <button type="button" class="src-calc__cta-help" onClick="showBottomPanel('help')"><span class="fas fa-question-circle"></span><span class="src-calc__cta-help-text"> help</span></button>
                 </div>
                 <div class="scr-calc__main">
                   <div class="scr-calc__summary">
@@ -34,7 +34,7 @@
                         <span class="src-calc__rate"><span id="src-calc__rate-years">x</span> year survival rate</span>
                     </div>
                     <div class="src-calc__description">
-                        <div class="src-cal__desc-text">Given ten people with the same type of cancer and profile:</div>
+                        <div class="src-cal__desc-text">Given a group of ten people with the same type of cancer and profile:</div>
                         <div class="src-calc__desc-visual" id="src-calc__desc-visual">
                             <span class="src-calc__desc-icon"><span class="fas fa-heart"></span></span>
                             <span class="src-calc__desc-icon"><span class="fas fa-heart"></span></span>
@@ -55,14 +55,14 @@
                     Button that are currently open for personalization get the additional class of 'src-calc__filter_active'-->
                     <button type="button" class="src-calc__filter src-calc__filter_sex src-calc__filter_personalized hidden" id="src-calc__filter_sex" onClick="showBottomPanel('sex')"><span class="fas fa-female"></span><span class="fas fa-male"></span> sex</button>
                     <button type="button" class="src-calc__filter src-calc__filter_age src-calc__filter_personalized hidden" id="src-calc__filter_age" onClick="showBottomPanel('age')"><span class="fas fa-birthday-cake"></span> age</button>
+                    <button type="button" class="src-calc__filter src-calc__filter_time hidden" id="src-calc__filter_time" onClick="showBottomPanel('time')"><span class="fas fa-calendar-alt"></span> diagnosed</button>
                     <button type="button" class="src-calc__filter src-calc__filter_stage hidden" id="src-calc__filter_stage" onClick="showBottomPanel('stage')"><span class="fas fa-tachometer-alt"></span> stage</button>
                     <button type="button" class="src-calc__filter src-calc__filter_grade hidden" id="src-calc__filter_grade" onClick="showBottomPanel('grade')"><span class="fas fa-braille"></span> grade</button>
-                    <button type="button" class="src-calc__filter src-calc__filter_time hidden" id="src-calc__filter_time" onClick="showBottomPanel('time')"><span class="fas fa-calendar-alt"></span> time</button>
                   </div>
                   <div class="scr-calc__footer">
-                    <button type="button" class="src-calc__filter src-calc__cta-help" id="src-calc__cta-help" onClick="showBottomPanel('help')"><span class="fas fa-question-circle"></span> calculator help</button>
                     <button type="button" class="src-calc__filter src-calc__cta-questions src-calc__cta-questions_warrior" id="src-calc__cta-questions_warrior" onClick="showBottomPanel('questions_warrior')"><span class="fas fa-user-md"></span> questions for your doctor</button>
                     <button type="button" class="src-calc__filter src-calc__cta-questions src-calc__cta-questions_doctor" id="src-calc__cta-questions_doctor" onClick="showBottomPanel('questions_doctor')"><span class="fas fa-user-md"></span> tips on talking with your patient</button>
+                    <button type="button" class="src-calc__filter src-calc__cta-share" id="src-calc__cta-share" onClick="showBottomPanel('share')"><span class="fas fa-question-circle"></span> share</button>
                   </div>
                   <div class="scr-calc__help" id="scr-calc__help"> <!-- displayed by default -->
                     [how to use calculator]
