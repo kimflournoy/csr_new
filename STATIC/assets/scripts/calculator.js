@@ -36,7 +36,7 @@ function getCalcTypes() { // Assign URL parameters, assigning to local variables
       bigc_selected = "error";
       break;
   }
-  console.log(bigc_selected);
+  // console.log(bigc_selected);
 
 
   var user_url = getUrlVars()["u"];
@@ -52,7 +52,7 @@ function getCalcTypes() { // Assign URL parameters, assigning to local variables
       user_selected = "error";
       break;
   }
-  console.log(user_selected);
+  // console.log(user_selected);
 
 }
 
@@ -65,6 +65,13 @@ function addClass(e, c) {
     if (arr.indexOf(classname) == -1) {
         element.className += " " + classname;
     }
+}
+
+function removeClass(e, c) {
+    var element, classname;
+    element = e;
+    classname = c;
+    element.classList.remove(classname);
 }
 
 function showElement(e) {
@@ -208,7 +215,8 @@ function getCalcInfo() { // set up the form on page load
 
 
 function showBottomPanel(cat) {
-  // hide everything first
+
+  // reset everything first
   addClass(document.getElementById("scr-calc__fieldset_sex"), "hidden");
   addClass(document.getElementById("scr-calc__fieldset_age"), "hidden");
   addClass(document.getElementById("scr-calc__fieldset_stage"), "hidden");
@@ -218,31 +226,45 @@ function showBottomPanel(cat) {
   addClass(document.getElementById("scr-calc__help"), "hidden");
   addClass(document.getElementById("scr-calc__questions"), "hidden");
   addClass(document.getElementById("scr-calc__share"), "hidden");
+
+  removeClass(document.getElementById("src-calc__filter_sex"), "src-calc__filter_active");
+  removeClass(document.getElementById("src-calc__filter_age"), "src-calc__filter_active");
+  removeClass(document.getElementById("src-calc__filter_stage"), "src-calc__filter_active");
+  removeClass(document.getElementById("src-calc__filter_grade"), "src-calc__filter_active");
+  removeClass(document.getElementById("src-calc__filter_time"), "src-calc__filter_active");
+  removeClass(document.getElementById("src-calc__cta-help"), "src-calc__filter_active");
+  removeClass(document.getElementById("src-calc__cta-questions"), "src-calc__filter_active");
+
+
   
   switch(cat) {
     case "sex":
       showElement(document.getElementById("scr-calc__fieldset_sex"));
+      addClass(document.getElementById("src-calc__filter_sex"), "src-calc__filter_active");
       break;
     case "age":
       showElement(document.getElementById("scr-calc__fieldset_age"));
+      addClass(document.getElementById("src-calc__filter_age"), "src-calc__filter_active");
       break;
     case "stage":
       showElement(document.getElementById("scr-calc__fieldset_stage"));
+      addClass(document.getElementById("src-calc__filter_stage"), "src-calc__filter_active");
       break;
     case "grade":
       showElement(document.getElementById("scr-calc__fieldset_grade"));
+      addClass(document.getElementById("src-calc__filter_grade"), "src-calc__filter_active");
       break;
     case "time":
       showElement(document.getElementById("scr-calc__fieldset_time"));
+      addClass(document.getElementById("src-calc__filter_time"), "src-calc__filter_active");
       break;
     case "help":
       showElement(document.getElementById("scr-calc__help"));
+      addClass(document.getElementById("src-calc__cta-help"), "src-calc__filter_active");
       break;
     case "questions":
       showElement(document.getElementById("scr-calc__questions"));
-      break;
-    case "share":
-      showElement(document.getElementById("scr-calc__share"));
+      addClass(document.getElementById("src-calc__cta-questions"), "src-calc__filter_active");
       break;
     default:
       break;

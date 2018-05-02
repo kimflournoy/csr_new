@@ -55,13 +55,13 @@
                     Button that are currently open for personalization get the additional class of 'src-calc__filter_active'-->
                     <button type="button" class="src-calc__filter src-calc__filter_sex src-calc__filter_personalized hidden" id="src-calc__filter_sex" onClick="showBottomPanel('sex')">[icon] sex</button>
                     <button type="button" class="src-calc__filter src-calc__filter_age src-calc__filter_personalized hidden" id="src-calc__filter_age" onClick="showBottomPanel('age')">[icon] age</button>
-                    <button type="button" class="src-calc__filter src-calc__filter_stage src-calc__filter_active hidden" id="src-calc__filter_stage" onClick="showBottomPanel('stage')">[icon] stage</button>
+                    <button type="button" class="src-calc__filter src-calc__filter_stage hidden" id="src-calc__filter_stage" onClick="showBottomPanel('stage')">[icon] stage</button>
                     <button type="button" class="src-calc__filter src-calc__filter_grade hidden" id="src-calc__filter_grade" onClick="showBottomPanel('grade')">[icon] grade</button>
                     <button type="button" class="src-calc__filter src-calc__filter_time hidden" id="src-calc__filter_time" onClick="showBottomPanel('time')">[icon] time</button>
                   </div>
                   <div class="scr-calc__footer">
-                    <button type="button" class="src-calc__cta-help" onClick="showBottomPanel('help')">[icon] calculator help</button>
-                    <button type="button" class="src-calc__cta-questions" onClick="showBottomPanel('questions')">[icon] questions for your doctor</button>
+                    <button type="button" class="src-calc__filter src-calc__cta-help" id="src-calc__cta-help" onClick="showBottomPanel('help')">[icon] calculator help</button>
+                    <button type="button" class="src-calc__filter src-calc__cta-questions" id="src-calc__cta-questions" onClick="showBottomPanel('questions')">[icon] questions for your doctor</button>
                   </div>
                   <div class="scr-calc__help" id="scr-calc__help"> <!-- displayed by default -->
                     [how to use calculator]
