@@ -289,15 +289,26 @@ function showBottomPanel(cat) {
 }
 
 
-function updateBigCButtons(e) {
+function updateBigCButtons(e, type) {
 
-  element = e;
+  var element = e;
+  var parent = e.parentNode;
+  
+  // reset all active buttons
+  var children = parent.children;
+  for (var i = 0; i < children.length; i++) {
+    var child = children[i];
+    removeClass(child, "active");
+  }
+  
 
-  switch(e.name) {
+  switch(type) {
     case "sex":
       selected_sex = e.value;
       document.getElementById("src-calc__filter-value_sex").innerHTML = selected_sex;
+      addClass(e, "active");
       break;
+
     // case "age":
     //   break;
     // case "stage":

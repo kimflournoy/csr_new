@@ -418,7 +418,7 @@ a:hover {
   background-color: #4D0092;
   color: #fff;
 }
-.src-calc__select-button_active {
+.src-calc__select-button.active {
   background-color: #A9579A;
 }
 

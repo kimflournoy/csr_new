@@ -459,7 +459,7 @@ a {
   background-color: $purple;
   color: #fff;
 
-  &_active {
+  &.active {
     background-color: $purple_med;
   }
 }
