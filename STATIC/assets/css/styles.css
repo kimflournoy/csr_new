@@ -235,7 +235,7 @@ a:hover {
   padding: 0 10px 0 25px;
   margin-left: 20px;
 }
-.src-calc__user-type span:first-child {
+.src-calc__user-type > span:first-child {
   display: block;
   position: absolute;
   top: 5px;
@@ -244,19 +244,19 @@ a:hover {
   height: 15px;
   border-radius: 50%;
 }
-.csr-layout__main_colon .src-calc__user-type span:first-child {
+.csr-layout__main_colon .src-calc__user-type > span:first-child {
   background-color: #3566C2;
   color: #fff;
 }
-.csr-layout__main_breast .src-calc__user-type span:first-child {
+.csr-layout__main_breast .src-calc__user-type > span:first-child {
   background-color: #C24F72;
   color: #fff;
 }
-.csr-layout__main_melanoma .src-calc__user-type span:first-child {
+.csr-layout__main_melanoma .src-calc__user-type > span:first-child {
   background-color: #C21824;
   color: #fff;
 }
-.csr-layout__main_appendix .src-calc__user-type span:first-child {
+.csr-layout__main_appendix .src-calc__user-type > span:first-child {
   background-color: #FFCC33;
   color: #545454;
 }
@@ -271,6 +271,28 @@ a:hover {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+.src-calc__user-type-button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.4rem;
+  text-align: center;
 }
 
 .scr-calc__fieldset-title {

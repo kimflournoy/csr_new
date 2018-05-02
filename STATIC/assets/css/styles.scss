@@ -368,7 +368,7 @@ a {
     color: #000;
     padding: 0 10px 0 25px;
     margin-left: 20px;
-    span:first-child {
+    > span:first-child {
         display: block;
         position: absolute;
         top: 5px;
@@ -382,6 +382,9 @@ a {
     .src-calc__user-type-info {
       @include screen-reader-only;
     }
+}
+.src-calc__user-type-button {
+  @include reset-button;
 }
 .scr-calc__fieldset-title {
   @include text_light;
