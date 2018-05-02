@@ -174,6 +174,10 @@ function calculateRate(c) {
       percentage = 99;
       survival_years = 4;
       break;
+    case "fake":
+      percentage = 77;
+      survival_years = 5;
+      break;
     default:
       break;
   }
@@ -320,6 +324,8 @@ function updateBigCButtons(e, type) {
     default:
       break;
   }
+  
+  calculateRate("fake");
 
 
   // var selected_sex = "";
