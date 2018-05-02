@@ -266,6 +266,9 @@ function showBottomPanel(cat) {
       showElement(document.getElementById("scr-calc__questions"));
       addClass(document.getElementById("src-calc__cta-questions"), "src-calc__filter_active");
       break;
+    case "share":
+      showElement(document.getElementById("scr-calc__share"));
+      break;
     default:
       break;
   }

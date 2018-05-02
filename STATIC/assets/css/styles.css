@@ -341,7 +341,7 @@ a:hover {
   color: #fff;
 }
 .src-calc__filter_active {
-  border: 2px dotted red;
+  background-color: #706E6B;
 }
 
 .scr-calc__update {
