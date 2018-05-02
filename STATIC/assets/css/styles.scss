@@ -11,6 +11,10 @@ $yellow: #FFCC33; // appendix
 $purple: #4D0092;
 $blue_light: #8BC6FF;
 
+$blue_med: #6084AD;
+$purple_med: #A9579A;
+$purple_light: #E6D9E8;
+
 // $orange: #F5A623;
 
 $text_default: #4A4A4A;
@@ -173,6 +177,7 @@ $screen_xlg: 1600px;
 html {
   font-size: 20px;
   font-family: 'Kiro', Arial, sans-serif;
+  color: $text_dark;
 }
 
 a {
@@ -185,6 +190,10 @@ a {
 
 .hidden {
   display: none;
+}
+
+.csr-header__logo {
+  text-align: center;
 }
 
 .csr-logo_purple {
@@ -205,10 +214,21 @@ a {
   width: 425px;
 }
 .csr-layout__header {
-  border-bottom: 1px solid $border_med;
+//  border-bottom: 1px solid $border_med;
+  margin-bottom: 0.5rem;
 }
 .csr-layout__footer {
   border-top: 1px solid $border_med;
+  text-align: center;
+}
+
+.csr-start {
+  font-size: 3rem;
+  line-height: 3.75rem;
+  
+  p {
+    margin: 0;
+  }
 }
 .csr-start div,
 .csr-start button {
@@ -221,11 +241,30 @@ a {
   position: relative;
 }
 .scr-start__selector {
+
+  background-color: transparent;
   border: none;
-  padding: 5px 0;
-  margin-bottom: 30px;
-  margin-top: 10px;
+  
+  margin: 0;
+  padding: 0;
+  border-bottom: 4px solid $purple_light;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  font-size: inherit;
+  line-height: inherit;
+  
+  &.scr-start__selector_user {
+    color: $blue_light;
+  }
+  
+  &.scr-start__selector_bigc {
+    color: $purple_med;
+  }
+
 }
+
+
 .scr-start__selector-icon {
   font-size: 1rem;
   color: $purple;

@@ -2,8 +2,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-  
+
     <title>CancerSurvivalRates.org</title>
+
     <link rel="stylesheet" href="assets/fonts/fontawesome/css/fontawesome-all.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="assets/scripts/index.js"></script>
@@ -22,51 +23,46 @@
               <!-- start component -->
               <div class="csr-start">
                 <h1 class="csr-start__title">Tell us about yourself to get started.</h1>
-                <p>I am a<br />
-                <div class="scr-start__selector-wrapper">
-                  <button type="button" class="scr-start__selector scr-start__selector_user" onClick="updateFormUser('warrior')">
-                    <span class="scr-start__selector-text">warrior</span>
-                    <!--
-                    Clicking the `scr-start__selector` button should add the class `scr-start__menu_is-open` to the menu div
-                    and `scr-start__selector-icon_is-open` to the selector-icon span.
-                    When a button is selected from the menu, the is-open classes should be removed and the `scr-start__selector` button text should be updated.
-                    -->
-
-                    <span class="scr-start__selector-icon">
-                        <span class="fas fa-angle-right"></span>
-                        <span class="fas fa-angle-down"></span>
-                    </span>
-                  </button>
-                  <div class="scr-start__menu">
-                    <button type="button" class="scr-start__menu-btn" id="btn_warrior">warrior</button>
-                    <button type="button" class="scr-start__menu-btn" id="btn_doctor" onClick="updateFormUser('doctor')">doctor</button>
-                  </div>
-                </div>
+                <p>I am a 
+                <span class="scr-start__selector-wrapper">
+                  
+                  <select class="scr-start__selector scr-start__selector_user" id="scr-start__selector_user">
+                    <option>doctor</option>
+                    <option>warrior</option>
+                  </select>
+                  <span class="fas fa-chevron-down scr-start__selector-icon"></span>
+                  
+                  <br>
+                </span>
                 searching for answers on<br />
-                <div class="scr-start__selector-wrapper">
-                  <button type="button" class="scr-start__selector scr-start__selector_type" onClick="updateFormBigC('a')">
-                    <span class="scr-start__selector-text">pancreatic</span>
-                    <span class="scr-start__selector-icon scr-start__selector-icon_is-open">
-                        <span class="fas fa-angle-right"></span>
-                        <span class="fas fa-angle-down"></span>
-                  </span>
-                  </button>
-                  <div class="scr-start__menu scr-start__menu_is-open">
-                    <button type="button" class="scr-start__menu-btn">appendix</button>
-                    <button type="button" class="scr-start__menu-btn">colon</button>
-                    <button type="button" class="scr-start__menu-btn">breast</button>
-                    <button type="button" class="scr-start__menu-btn">melanoma</button>
-                  </div>
-                </div>
+
+                  <select class="scr-start__selector scr-start__selector_bigc" id="scr-start__selector_bigc">
+                    <option>appendix</option>
+                    <option>colon</option>
+                    <option>breast</option>
+                    <option>melanoma</option>
+                    <option>other</option>
+                    <option>other</option>
+                    <option>other</option>
+                    <option>other</option>
+                    <option>other</option>
+                    <option>other</option>
+                    <option>other</option>
+                    <option>other</option>
+                    <option>other</option>
+                    <option>other</option>
+                  </select>
+                  <span class="fas fa-chevron-down scr-start__selector-icon"></span>
+
                 cancer survival rates.
                 </p>
-                <div class="scr-start__actions"><button type="submit" class="csr-start__submit" onClick="redirCalc()">go!</button></div>
+                <div class="scr-start__actions"><button type="button" class="csr-start__submit" onClick="redirCalc()">go</button></div>
               </div>
             </main>
           </div>
           <div class="csr-layout__footer">
             <footer class="csr-footer">
-              <p>Powered by <a href="" target="new">courage.health</a></p>
+              <p>Powered by <a href="http://courage.health" target="new">courage.health</a></p>
             </footer>
           </div>
         </div>

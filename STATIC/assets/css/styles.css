@@ -18,6 +18,7 @@
 html {
   font-size: 20px;
   font-family: "Kiro", Arial, sans-serif;
+  color: #545454;
 }
 
 a {
@@ -30,6 +31,10 @@ a:hover {
 
 .hidden {
   display: none;
+}
+
+.csr-header__logo {
+  text-align: center;
 }
 
 .csr-logo_purple {
@@ -60,11 +65,20 @@ a:hover {
 }
 
 .csr-layout__header {
-  border-bottom: 1px solid #dddbda;
+  margin-bottom: 0.5rem;
 }
 
 .csr-layout__footer {
   border-top: 1px solid #dddbda;
+  text-align: center;
+}
+
+.csr-start {
+  font-size: 3rem;
+  line-height: 3.75rem;
+}
+.csr-start p {
+  margin: 0;
 }
 
 .csr-start div,
@@ -90,10 +104,22 @@ a:hover {
 }
 
 .scr-start__selector {
+  background-color: transparent;
   border: none;
-  padding: 5px 0;
-  margin-bottom: 30px;
-  margin-top: 10px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 4px solid #E6D9E8;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  font-size: inherit;
+  line-height: inherit;
+}
+.scr-start__selector.scr-start__selector_user {
+  color: #8BC6FF;
+}
+.scr-start__selector.scr-start__selector_bigc {
+  color: #A9579A;
 }
 
 .scr-start__selector-icon {

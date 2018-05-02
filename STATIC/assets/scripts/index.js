@@ -2,10 +2,12 @@ var user_selected = "";
 var bigc_selected = "";
 var error = false;
 
-function updateFormUser(u) {
-  alert(u);
+function updateFormUser() {
+  var e = document.getElementById("scr-start__selector_user");
+  var u = e.options[e.selectedIndex].value;
+
   if(u === "doctor") {
-    user_selected = "c";
+    user_selected = "d";
   }
   else if(u === "warrior") {
     user_selected = "w";
@@ -15,35 +17,41 @@ function updateFormUser(u) {
   }
 }
 
-function updateFormBigC(c) {
-  alert(c);
-  if(c === "c") {
-    bigc_selected = "c";
-  }
-  else if(c === "a") {
+function updateFormBigC() {
+  var e = document.getElementById("scr-start__selector_bigc");
+  var c = e.options[e.selectedIndex].value;
+
+  if(c === "appendix") {
     bigc_selected = "a";
   }
-  else if(c === "b") {
+  else if(c === "colon") {
+    bigc_selected = "c";
+  }
+  else if(c === "breast") {
     bigc_selected = "b";
   }
-  else if(c === "m") {
+  else if(c === "melanoma") {
     bigc_selected = "m";
   }
   else {
     error = true;
   }
+
 }
+
+
 
 function redirCalc() {
   
-  if(!error) {
-    // alert(user_selected);
-    // alert(bigc_selected);
-    window.location.href = "./calculator.html?c=" + bigc_selected + "&u=" + user_selected;
-  }
-  else {
+  updateFormUser();
+  updateFormBigC();
+
+  if(error) {
     alert("Sorry, there's been an error - please select your user type and condition");
     return false;
+  }
+  else {
+    window.location.href = "./calculator.html?c=" + bigc_selected + "&u=" + user_selected;
   }
 
 }
