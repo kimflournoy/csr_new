@@ -102,8 +102,13 @@ $screen_xlg: 1600px;
    /* Corrects inability to style clickable `input` types in iOS */
    -webkit-appearance: none;
 
-}
+   border-radius: 0.5rem;
+   padding: 0.2rem 0.4rem;
+   text-align: center;
 
+
+
+}
 
 // Accessibility mixins
 
@@ -218,8 +223,9 @@ a {
   margin-bottom: 0.5rem;
 }
 .csr-layout__footer {
-  border-top: 1px solid $border_med;
+//  border-top: 1px solid $border_med;
   text-align: center;
+  @include text_light;
 }
 
 .csr-start {
@@ -391,14 +397,30 @@ a {
   @include screen-reader-only;
 }
 
+.src-calc__results {
+  margin-top: 1rem;
+  border-bottom: 1px solid $border_med;
+}
+
 .src-calc__percentage {
     @include text_bold;
-    font-size: 2rem;
+    font-size: 4rem;
+    line-height: 4.5rem;
     @include set-colors("text");
+    display: inline-block;
+    min-width: 9rem;
+    vertical-align: middle;
+}
+
+.src-calc__rate {
+  line-height: 4.5rem;
+  display: inline-block;
+  vertical-align: middle;
 }
 .src-calc__description {
     display: flex;
     justify-content: space-between;
+    margin-top: 1rem;
 }
 .desc-text,
 .desc-visual {
@@ -419,9 +441,6 @@ a {
 
 .src-calc__filter {
   @include reset-button;
-  border-radius: 0.5rem;
-  padding: 0.2rem 0.4rem;
-  text-align: center;
   margin-bottom: 0.5rem;
   background-color: $text_dark;
   color: #fff;
@@ -432,6 +451,16 @@ a {
   &.src-calc__cta-share {
     position: absolute;
     right: 0;
+  }
+}
+
+.src-calc__select-button {
+  @include reset-button;
+  background-color: $purple;
+  color: #fff;
+
+  &_active {
+    background-color: $purple_med;
   }
 }
 
