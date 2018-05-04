@@ -33,27 +33,31 @@ $screen_lg: 1200px;
 $screen_xlg: 1600px;
 
 @font-face {
-    font-family: 'Kiro';
-    src: url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.woff') format('woff'), /* Pretty Modern Browsers */
-         url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
-    font-family: 'KiroBold';
-    src: url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.woff2') format('woff2'), /* Super Modern Browsers */
-         url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.woff') format('woff'), /* Pretty Modern Browsers */
-         url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.ttf')  format('truetype'), /* Safari, Android, iOS */
-         url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.svg#svgFontName') format('svg'); /* Legacy iOS */
-    font-family: 'KiroLight';
-    src: url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-              url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.woff2') format('woff2'), /* Super Modern Browsers */
-              url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.woff') format('woff'), /* Pretty Modern Browsers */
-              url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.ttf')  format('truetype'), /* Safari, Android, iOS */
-              url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+  font-family: 'Kiro';
+  src: url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.woff') format('woff'), /* Pretty Modern Browsers */
+  url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'KiroBold';
+  src: url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.woff') format('woff'), /* Pretty Modern Browsers */
+  url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'KiroLight';
+  src: url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.woff') format('woff'), /* Pretty Modern Browsers */
+  url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 //MIXINS
@@ -199,14 +203,13 @@ a {
 
 .csr-header__logo {
   text-align: center;
+//  @include text_bold;
 }
 
 .csr-logo_purple {
-  @include text_bold;
   color: $purple;  
 }
 .csr-logo_blue {
-  @include text_bold;
   color: $blue_light; 
 }
  .csr-layout {
@@ -259,6 +262,7 @@ a {
   -webkit-border-radius: 0px;
   font-size: inherit;
   line-height: inherit;
+  font-family: inherit;
   
   &.scr-start__selector_user {
     color: $blue_light;
@@ -342,6 +346,7 @@ a {
   background-color: $purple;
   color: #fff;
   margin: 15px auto;
+  font-family: inherit;
 }
 
 .scr-calc__header {

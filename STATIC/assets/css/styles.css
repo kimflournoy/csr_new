@@ -4,11 +4,15 @@
   /* IE9 Compat Modes */
   src: url("../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.woff2") format("woff2"), url("../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.woff") format("woff"), url("../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.ttf") format("truetype"), url("../fonts/kiro/Kiro_W03_Regular/Kiro_W03_Regular.svg#svgFontName") format("svg");
   /* Legacy iOS */
+}
+@font-face {
   font-family: "KiroBold";
   src: url("../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.eot");
   /* IE9 Compat Modes */
   src: url("../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.woff2") format("woff2"), url("../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.woff") format("woff"), url("../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.ttf") format("truetype"), url("../fonts/kiro/Kiro_W03_ExtraBold/Kiro_W03_ExtraBold.svg#svgFontName") format("svg");
   /* Legacy iOS */
+}
+@font-face {
   font-family: "KiroLight";
   src: url("../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.eot");
   /* IE9 Compat Modes */
@@ -38,12 +42,10 @@ a:hover {
 }
 
 .csr-logo_purple {
-  font-family: "KiroBold", Arial, sans-serif;
   color: #4D0092;
 }
 
 .csr-logo_blue {
-  font-family: "KiroBold", Arial, sans-serif;
   color: #8BC6FF;
 }
 
@@ -114,6 +116,7 @@ a:hover {
   -webkit-border-radius: 0px;
   font-size: inherit;
   line-height: inherit;
+  font-family: inherit;
 }
 .scr-start__selector.scr-start__selector_user {
   color: #8BC6FF;
@@ -194,6 +197,7 @@ a:hover {
   background-color: #4D0092;
   color: #fff;
   margin: 15px auto;
+  font-family: inherit;
 }
 
 .scr-calc__header {
