@@ -4,9 +4,10 @@
     <meta name="viewport" content="width=device-width">
   
     <title>CancerSurvivalRates.org - Calculator</title>
+
     <link rel="stylesheet" href="assets/fonts/fontawesome/css/fontawesome-all.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="assets/scripts/calculator.js"></script>
+
     <meta name="description" content="">
 </head>
 <body onLoad="getCalcInfo()">
@@ -56,10 +57,10 @@
                     Buttons that have been personalized get the additional class of 'src-calc__filter_personalized'
                     Button that are currently open for personalization get the additional class of 'src-calc__filter_active'-->
                     <button type="button" class="src-calc__filter src-calc__filter_sex src-calc__filter_personalized hidden" id="src-calc__filter_sex" onClick="showBottomPanel('sex')"><span class="fas fa-female"></span><span class="fas fa-male"></span> <span class="src-calc__filter-value" id="src-calc__filter-value_sex">sex</span></button>
-                    <button type="button" class="src-calc__filter src-calc__filter_age src-calc__filter_personalized hidden" id="src-calc__filter_age" onClick="showBottomPanel('age')"><span class="fas fa-birthday-cake"></span> age</button>
+                    <button type="button" class="src-calc__filter src-calc__filter_age src-calc__filter_personalized hidden" id="src-calc__filter_age" onClick="showBottomPanel('age')"><span class="fas fa-birthday-cake"></span> <span class="src-calc__filter-value" id="src-calc__filter-value_age">age</span></button>
                     <button type="button" class="src-calc__filter src-calc__filter_time hidden" id="src-calc__filter_time" onClick="showBottomPanel('time')"><span class="fas fa-calendar-alt"></span> diagnosed</button>
-                    <button type="button" class="src-calc__filter src-calc__filter_stage hidden" id="src-calc__filter_stage" onClick="showBottomPanel('stage')"><span class="fas fa-tachometer-alt"></span> stage</button>
-                    <button type="button" class="src-calc__filter src-calc__filter_grade hidden" id="src-calc__filter_grade" onClick="showBottomPanel('grade')"><span class="fas fa-braille"></span> grade</button>
+                    <button type="button" class="src-calc__filter src-calc__filter_stage hidden" id="src-calc__filter_stage" onClick="showBottomPanel('stage')"><span class="fas fa-tachometer-alt"></span> <span class="src-calc__filter-value" id="src-calc__filter-value_stage">stage</span></button>
+                    <button type="button" class="src-calc__filter src-calc__filter_grade hidden" id="src-calc__filter_grade" onClick="showBottomPanel('grade')"><span class="fas fa-braille"></span> <span class="src-calc__filter-value" id="src-calc__filter-value_grade">grade</span></button>
                   </div>
                   <div class="scr-calc__footer">
                     <button type="button" class="src-calc__filter src-calc__cta-questions src-calc__cta-questions_warrior" id="src-calc__cta-questions_warrior" onClick="showBottomPanel('questions_warrior')"><span class="fas fa-user-md"></span> questions for your doctor</button>
@@ -83,8 +84,8 @@
                       <fieldset class="scr-calc__fieldset scr-calc__fieldset_sex hidden" id="scr-calc__fieldset_sex">
                         <h2 class="scr-calc__fieldset-title"><span class="fas fa-female"></span><span class="fas fa-male"></span> What is your/the patient's sex?</h2>
                         <div class="src-calc__select-wrapper">
-                          <button type="button" class="src-calc__select-button" value="female" onClick="updateBigCButtons(this, 'sex')">female</button>
-                          <button type="button" class="src-calc__select-button" value="male" onClick="updateBigCButtons(this, 'sex')">male</button>
+                          <button type="button" class="src-calc__select-button" value="F" onClick="updateBigCButtons(this, 'sex')">female</button>
+                          <button type="button" class="src-calc__select-button" value="M" onClick="updateBigCButtons(this, 'sex')">male</button>
                         </div>
                         <!-- <input type="radio" name="sex" value="female" id="sex_female" class="scr-calc__input scr-calc__input_sex" onClick="updateBigCButtons(this)" />
                         <label for="sex_female" class="scr-calc__label scr-calc__label_sex">Female</label>
@@ -94,13 +95,33 @@
                       </fieldset>
                       <fieldset class="scr-calc__fieldset scr-calc__fieldset_age hidden" id="scr-calc__fieldset_age">
                         <h2 class="scr-calc__fieldset-title"><span class="fas fa-birthday-cake"></span> What is your/the patient's age?</h2>
-                        18<input type="range" min="18" max="92" name="age" id="age" class="scr-calc__input scr-calc__input_age" />92<br />
+                        
+                        <div class="">
+                        18
+                        <span class="slidecontainer">
+                          <input type="range" min="18" max="92" value="55" class="slider" id="myRange">
+                        </span>
+                        92
+                        <div><span id="demo">Age</span> years old</div>
+                        </div>
+                        
+                        <!-- 18<input type="range" min="18" max="92" name="age" id="age" class="scr-calc__input scr-calc__input_age" />92<br />
                         <label for="age" class="scr-calc__label scr-calc__label_age"><span>[selected value]</span> years old</label>
-                        <button type="submit" class="scr-calc__update">Update</button>
+                        <button type="submit" class="scr-calc__update">Update</button> -->
                       </fieldset>
                       <fieldset class="scr-calc__fieldset scr-calc__fieldset_stage hidden" id="scr-calc__fieldset_stage">
                         <h2 class="scr-calc__fieldset-title"><span class="fas fa-tachometer-alt"></span> Cancer stage:</h2>
-                        <input type="radio" name="stage" value="1" id="stage_1" class="scr-calc__input scr-calc__input_stage" />
+                        
+                        <div class="src-calc__select-wrapper">
+                          <button type="button" class="src-calc__select-button" value="stage: 1" onClick="updateBigCButtons(this, 'stage')">stage: 1</button>
+                          <button type="button" class="src-calc__select-button" value="stage: 2" onClick="updateBigCButtons(this, 'stage')">stage: 2</button>
+                          <button type="button" class="src-calc__select-button" value="stage: 3" onClick="updateBigCButtons(this, 'stage')">stage: 3</button>
+                          <button type="button" class="src-calc__select-button" value="stage: 4" onClick="updateBigCButtons(this, 'stage')">stage: 4</button>
+                        </div>
+                        
+                        
+
+<!--                        <input type="radio" name="stage" value="1" id="stage_1" class="scr-calc__input scr-calc__input_stage" />
                         <label for="stage_1" class="scr-calc__label scr-calc__label_stage">1</label>
                         <input type="radio" name="stage" value="1" id="stage_2" class="scr-calc__input scr-calc__input_stage" />
                         <label for="stage_2" class="scr-calc__label scr-calc__label_stage">2</label>
@@ -108,19 +129,28 @@
                         <label for="stage_3" class="scr-calc__label scr-calc__label_stage">3</label>
                         <input type="radio" name="stage" value="1" id="stage_4" class="scr-calc__input scr-calc__input_stage" />
                         <label for="stage_4" class="scr-calc__label scr-calc__label_stage">4</label>
-                        <button type="submit" class="scr-calc__update">Update</button>
+                        <button type="submit" class="scr-calc__update">Update</button> -->
                       </fieldset>
                       <fieldset class="scr-calc__fieldset scr-calc__fieldset_grade hidden" id="scr-calc__fieldset_grade">
                         <h2 class="scr-calc__fieldset-title"><span class="fas fa-braille"></span> What is your/the patient's cancer grade?</h2>
-                        <input type="radio" name="grade" value="undifferentiated" id="grade_undifferentiated" class="scr-calc__input scr-calc__input_grade" />
+
+
+
+                        <div class="src-calc__select-wrapper src-calc__select-wrapper_grade">
+                          <button type="button" class="src-calc__select-button" value="Well" onClick="updateBigCButtons(this, 'grade')">Well differentiated</button>
+                          <button type="button" class="src-calc__select-button" value="Moderately" onClick="updateBigCButtons(this, 'grade')">Moderately differentiated</button>
+                          <button type="button" class="src-calc__select-button" value="Poorly" onClick="updateBigCButtons(this, 'grade')">Poorly or undifferentiated</button>
+                        </div>
+
+                        <!-- <input type="radio" name="grade" value="undifferentiated" id="grade_undifferentiated" class="scr-calc__input scr-calc__input_grade" />
                         <label for="grade_undifferentiated" class="scr-calc__label scr-calc__label_grade">Undifferentiated</label>
                         <input type="radio" name="grade" value="moderate" id="grade_moderate" class="scr-calc__input scr-calc__input_grade" />
                         <label for="grade_moderate" class="scr-calc__label scr-calc__label_grade">Moderately differentiated</label>
                         <input type="radio" name="grade" value="well" id="grade_well" class="scr-calc__input scr-calc__input_grade" />
                         <label for="grade_well" class="scr-calc__label scr-calc__label_grade">Well differentiated</label>
                         <input type="radio" name="grade" value="unknown" id="grade_unknown" class="scr-calc__input scr-calc__input_grade" />
-                        <label for="grade_unknown" class="scr-calc__label scr-calc__label_grade">Unknown</label>
-                        <button type="submit" class="scr-calc__update">Update</button>
+                        <label for="grade_unknown" class="scr-calc__label scr-calc__label_grade">Poorly or undifferentiated</label>
+                        <button type="submit" class="scr-calc__update">Update</button> -->
                       </fieldset>
                       <fieldset class="scr-calc__fieldset scr-calc__fieldset_time hidden" id="scr-calc__fieldset_time">
                         <!--sliders have very little functionality that works across browsers. To get the full behavior you described,
@@ -143,5 +173,11 @@
           </div>
         </div>
     </div>
+
+
+
+<script src="assets/scripts/calculator.js"></script>
+
+
 </body>
 </html>

@@ -221,6 +221,7 @@ function getCalcInfo() { // set up the form on page load
     displayBigCInfo(bigc_selected);
     displayBigCButtons(bigc_selected, user_selected);
     calculateRate(bigc_selected);
+    setUpSlider();
   }
 }
 
@@ -298,27 +299,42 @@ function updateBigCButtons(e, type) {
   var element = e;
   var parent = e.parentNode;
   
-  // reset all active buttons
-  var children = parent.children;
-  for (var i = 0; i < children.length; i++) {
-    var child = children[i];
-    removeClass(child, "active");
+  // remove active class on any previously selected buttons
+  function resetButtons() {
+    var children = parent.children;
+    for (var i = 0; i < children.length; i++) {
+      var child = children[i];
+      removeClass(child, "active");
+    }
   }
+  
   
 
   switch(type) {
     case "sex":
+      resetButtons();
       selected_sex = e.value;
       document.getElementById("src-calc__filter-value_sex").innerHTML = selected_sex;
       addClass(e, "active");
       break;
 
-    // case "age":
-    //   break;
-    // case "stage":
-    //   break;
-    // case "grade":
-    //   break;
+    case "age":
+      selected_age = e.value;
+      document.getElementById("src-calc__filter-value_age").innerHTML = selected_age;
+      break;
+
+    case "stage":
+      resetButtons();
+      selected_stage = e.value;
+      document.getElementById("src-calc__filter-value_stage").innerHTML = selected_stage;
+      addClass(e, "active");
+      break;
+    case "grade":
+      resetButtons();
+      selected_grade = e.value;
+      document.getElementById("src-calc__filter-value_grade").innerHTML = selected_grade;
+      addClass(e, "active");
+      break;
     // case "time":
     //   break;
     default:
@@ -334,3 +350,21 @@ function updateBigCButtons(e, type) {
   // var selected_grade = "";
   // var selected_time = "";
 }
+
+
+
+/* Slider */
+
+function setUpSlider() {
+  var slider = document.getElementById("myRange");
+  var output = document.getElementById("demo");
+  output.innerHTML = slider.value;
+
+  slider.oninput = function() {
+    output.innerHTML = this.value;
+    updateBigCButtons(this, 'age');
+  }
+
+}
+
+
