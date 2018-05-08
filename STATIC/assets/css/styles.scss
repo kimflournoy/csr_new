@@ -60,6 +60,7 @@ $screen_xlg: 1600px;
   url('../fonts/kiro/Kiro_W03_Light/Kiro_W03_Light.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
+
 //MIXINS
 
 //Text mixins
@@ -135,10 +136,10 @@ $screen_xlg: 1600px;
   position: relative;
   padding: 1rem;
   background: white;
-  border: 1px solid $border_med;
-  border-radius: 0.25rem;
-  background-clip: padding-box;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+//  border: 1px solid $border_med;
+//  border-radius: 0.25rem;
+//  background-clip: padding-box;
+//  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 @mixin set-colors($type) {
@@ -248,6 +249,8 @@ a {
 }
 .scr-start__selector-wrapper {
   position: relative;
+  display: inline-block;
+  border-bottom: 4px solid $purple_light;
 }
 .scr-start__selector {
 
@@ -256,13 +259,16 @@ a {
   
   margin: 0;
   padding: 0;
-  border-bottom: 4px solid $purple_light;
+  border: 0;
   border-radius: 0;
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
   font-size: inherit;
   line-height: inherit;
   font-family: inherit;
+  position: relative;
+  z-index: 3;
+  padding-right: 2rem;
   
   &.scr-start__selector_user {
     color: $blue_light;
@@ -271,6 +277,9 @@ a {
   &.scr-start__selector_bigc {
     color: $purple_med;
   }
+  
+  
+
 
 }
 
@@ -278,6 +287,10 @@ a {
 .scr-start__selector-icon {
   font-size: 1rem;
   color: $purple;
+  position: absolute;
+  z-index: 2;
+  top: 1.5rem;
+  right: 0;
   .fa-angle-down {
     display: none;
   }
@@ -290,6 +303,12 @@ a {
     }
   }
 }
+
+
+.scr-start__selector:focus + .scr-start__selector-icon {
+  color: transparent;
+}
+
 
 .scr-start__selector-text {
   @include text-bold;

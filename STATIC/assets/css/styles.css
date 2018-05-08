@@ -59,10 +59,6 @@ a:hover {
   position: relative;
   padding: 1rem;
   background: white;
-  border: 1px solid #dddbda;
-  border-radius: 0.25rem;
-  background-clip: padding-box;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
   width: 425px;
 }
 
@@ -103,6 +99,8 @@ a:hover {
 
 .scr-start__selector-wrapper {
   position: relative;
+  display: inline-block;
+  border-bottom: 4px solid #E6D9E8;
 }
 
 .scr-start__selector {
@@ -110,13 +108,16 @@ a:hover {
   border: none;
   margin: 0;
   padding: 0;
-  border-bottom: 4px solid #E6D9E8;
+  border: 0;
   border-radius: 0;
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
   font-size: inherit;
   line-height: inherit;
   font-family: inherit;
+  position: relative;
+  z-index: 3;
+  padding-right: 2rem;
 }
 .scr-start__selector.scr-start__selector_user {
   color: #8BC6FF;
@@ -128,6 +129,10 @@ a:hover {
 .scr-start__selector-icon {
   font-size: 1rem;
   color: #4D0092;
+  position: absolute;
+  z-index: 2;
+  top: 1.5rem;
+  right: 0;
 }
 .scr-start__selector-icon .fa-angle-down {
   display: none;
@@ -137,6 +142,10 @@ a:hover {
 }
 .scr-start__selector-icon.scr-start__selector-icon_is-open .fa-angle-right {
   display: none;
+}
+
+.scr-start__selector:focus + .scr-start__selector-icon {
+  color: transparent;
 }
 
 .scr-start__selector-text {

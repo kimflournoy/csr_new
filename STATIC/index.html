@@ -27,7 +27,10 @@
                 I'm searching for answers on<br />
 
                 <span class="scr-start__selector-wrapper">
-                  <select class="scr-start__selector scr-start__selector_bigc" id="scr-start__selector_bigc">
+                  <select class="scr-start__selector scr-start__selector_bigc" id="scr-start__selector_bigc"
+                  onfocus='this.size=4;' 
+                  onblur='this.size=1;' 
+                  onchange='this.size=1; this.blur();'>
                     <option>appendix</option>
                     <option>colon</option>
                     <option>breast</option>
@@ -50,8 +53,8 @@
                 
                 <p>
                   <br>
-                  <span class="scr-start__selector-wrapper">
                   Mode: 
+                  <span class="scr-start__selector-wrapper">
                     <select class="scr-start__selector scr-start__selector_user" id="scr-start__selector_user">
                       <option>doctor</option>
                       <option>warrior</option>
