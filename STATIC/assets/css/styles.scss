@@ -190,6 +190,12 @@ html {
   color: $text_dark;
 }
 
+@media only screen and (max-width: 600px) {
+    html {
+      font-size: 14px;
+    }
+}
+
 a {
   color: $purple;
   text-decoration: none;
