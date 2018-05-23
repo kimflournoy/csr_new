@@ -69,7 +69,7 @@ $screen_xlg: 1600px;
   font-family: 'KiroBold', Arial, sans-serif;
 }
 @mixin text_light {
-    font-family: 'KiroLight', Arial, sans-serif;
+    font-family: 'KiroLight', Arial, sans-serif !important;
   }
 
 @mixin text_italic {
@@ -90,6 +90,7 @@ $screen_xlg: 1600px;
    padding: 0;
    width: auto;
    overflow: visible;
+   @include text_light;
 
    background: transparent;
 
@@ -137,7 +138,7 @@ $screen_xlg: 1600px;
 //  padding: 1rem;
   background: white;
   border: 1px solid $border_med;
-  border-radius: 0.25rem;
+  border-radius: 5px;
   background-clip: padding-box;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
@@ -161,6 +162,21 @@ $screen_xlg: 1600px;
     .csr-layout__main_appendix & {
       background-color: $yellow;
       color: $text_dark;
+    }
+  }
+  @else if $type == "background-light" {
+    .csr-layout__main_colon & {
+      background-color: darken($blue, 10%);
+    }
+    .csr-layout__main_breast & {
+      background-color: darken($pink, 10%);
+    }
+    .csr-layout__main_melanoma & {
+      background-color: darken($red, 10%);
+    }
+  
+    .csr-layout__main_appendix & {
+      background-color: darken($yellow, 10%);
     }
   }
   @else if $type == "text" {
@@ -194,6 +210,11 @@ html {
     html {
       font-size: 14px;
     }
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
 }
 
 a {
@@ -237,9 +258,10 @@ a {
 .csr-layout__header {
 //  border-bottom: 1px solid $border_med;
   margin-bottom: 0.5rem;
+  margin-top: 1rem;
 }
 .scr-calc__main {
-  padding: 1rem;
+  padding: 1rem 0.5rem;
 }
 .csr-layout__footer {
 //  border-top: 1px solid $border_med;
@@ -392,13 +414,14 @@ a {
   
   @include set-colors("background");
   border: 1px solid transparent;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  box-sizing: border-box;
  
 }
 .scr-calc__title {
   font-size: 1.25rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
   @include text_light;
 }
 .src-calc__user-type {
@@ -438,7 +461,7 @@ a {
 }
 
 .scr-calc__summary {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 .scr-calc__form {
 
@@ -456,7 +479,9 @@ a {
   background: transparent;
   color: #fff;
   font-size: 1.25rem;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
+
+  margin-left: 56px;
 }
 .src-calc__cta-help-text {
   @include screen-reader-only;
@@ -472,27 +497,45 @@ a {
     line-height: 4.5rem;
     @include set-colors("text");
     display: inline-block;
-    max-width: 50%;
+    width: 40%;
     vertical-align: middle;
+    text-align: center;
 }
 
 .src-calc__rate {
 //  line-height: 4.5rem;
   display: inline-block;
   vertical-align: middle;
-  max-width: 40%;
+  width: 55%;
+  box-sizing: border-box;
   padding-left: 1rem;
+  text-align: center;
 }
 .src-calc__description {
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
     min-height: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $border_med;
 }
 
+.src-calc__desc-text {
+  width: 50%;
+  display: inline-block;
+}
+
+.src-calc__desc-visual {
+  width: 50%;
+  display: inline-block;
+  text-align: right;
+}
 
 .src-calc__desc-icon {
+  display: inline-block;
+  margin-bottom: 0.5rem;
   color: #ccc;
+  font-size: 1.5rem;
   &.src-calc__desc-icon_selected {
     @include set-colors("text");
   }
@@ -502,20 +545,24 @@ a {
   position: relative;
   padding-right: 100px;
   min-height: 3rem;
+  font-size: 0.9rem;
 }
 
 .scr-calc__filters {
   min-height: 3rem;
+  font-size: 0.9rem;
 }
 
 .src-calc__filter {
   @include reset-button;
+  padding: 0.3rem 0.6rem;
   margin-bottom: 0.5rem;
-  background-color: $text_dark;
+//  background-color: $text_dark;
+  @include set-colors("background");
   color: #fff;
 
   &_active {
-    background-color: $text_light;
+    @include set-colors("background-light");
   }
   &.src-calc__cta-share {
     position: absolute;
@@ -526,8 +573,14 @@ a {
 
 .src-calc__select-button {
   @include reset-button;
+  display: inline-block;
   background-color: $purple;
   color: #fff;
+  padding: 0.3rem 0.6rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 
   &.active {
     background-color: $purple_med;
@@ -542,14 +595,23 @@ a {
 /* bottom panel */
 
 .csr-layout__bottom-panel {
-  padding: 2rem 1rem;
+  padding: 2rem;
   background-color: #efefef;
   text-align: center;
-  min-height: 15rem;
+  min-height: 10rem;
+  margin-top: 1rem;
 }
 
 
 /* SLIDER */
+
+.csr-calc__slider-wrapper {
+  font-size: 1.1rem;
+}
+
+.csr-calc__slider-label_right {
+  margin-left: 0.1rem;
+}
 
 .slidecontainer {
   display: inline-block;
@@ -580,14 +642,14 @@ a {
     appearance: none;
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: #4CAF50; /* Green background */
+    background: $purple; /* Purple background */
     cursor: pointer; /* Cursor on hover */
 }
 
 .slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: #4CAF50; /* Green background */
+    background: $purple; /* Purple background */
     cursor: pointer; /* Cursor on hover */
 }
 

@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
   
-    <title>CancerSurvivalRates.org - Calculator</title>
+    <title>cancersurvivalrates.org - Calculator</title>
 
     <link rel="stylesheet" href="assets/fonts/fontawesome/css/fontawesome-all.css">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -16,7 +16,7 @@
         
           <div class="csr-layout__header">
             <header class="csr-header">
-                <div class="csr-header__logo"><span class="csr-logo_purple">Cancer</span><span class="csr-logo_blue">Survival</span><span class="csr-logo_purple">Rates</span><span class="csr-logo_blue">.org</span></div>
+                <div class="csr-header__logo"><span class="csr-logo_purple">cancer</span><span class="csr-logo_blue">survival</span><span class="csr-logo_purple">rates</span><span class="csr-logo_blue">.org</span></div>
             </header>
           </div>
           <div class="csr-layout__wrapper-inner">
@@ -29,14 +29,14 @@
                   <div class="src-calc__user-type"><span></span><span class="src-calc__user-type-info">User type:</span>
                     <button class="src-calc__user-type-button"><span id="src-calc__user-info_doctor">doctor</span><span id="src-calc__user-info_warrior">warrior</span></button>
                   </div>
-                  <h1 class="scr-calc__title" id="scr-calc__title">cancer type</h1>
+                  <h1 class="scr-calc__title"><span id="scr-calc__title">cancer type</span> Cancer</h1>
                   <button type="button" class="src-calc__cta-help" onClick="showBottomPanel('help')"><span class="fas fa-question-circle"></span><span class="src-calc__cta-help-text"> help</span></button>
                 </div>
                 <div class="scr-calc__main">
                   <div class="scr-calc__summary">
                     <div class="src-calc__results">
                         <span class="src-calc__percentage" id="src-calc__percentage" aria-live="polite">%</span>
-                        <span class="src-calc__rate"><span id="src-calc__rate-years" aria-live="polite">x</span> year survival rate</span>
+                        <span class="src-calc__rate"><span id="src-calc__rate-years" aria-live="polite">x</span>-year<br>conditional survival rate</span>
                     </div>
                     <div class="src-calc__description">
                         <div class="src-calc__desc-text">Given a group of ten people with the same type of cancer and profile:</div>
@@ -45,7 +45,7 @@
                             <span class="src-calc__desc-icon"><span class="fas fa-heart"></span></span>
                             <span class="src-calc__desc-icon"><span class="fas fa-heart"></span></span>
                             <span class="src-calc__desc-icon"><span class="fas fa-heart"></span></span>
-                            <span class="src-calc__desc-icon"><span class="fas fa-heart"></span></span>
+                            <span class="src-calc__desc-icon"><span class="fas fa-heart"></span></span><br>
                             <span class="src-calc__desc-icon"><span class="fas fa-heart"></span></span>
                             <span class="src-calc__desc-icon"><span class="fas fa-heart"></span></span>
                             <span class="src-calc__desc-icon"><span class="fas fa-heart"></span></span>
@@ -58,11 +58,11 @@
                     <!--These buttons trigger the visibility of the fieldsets below
                     Buttons that have been personalized get the additional class of 'src-calc__filter_personalized'
                     Button that are currently open for personalization get the additional class of 'src-calc__filter_active'-->
-                    <button type="button" class="src-calc__filter src-calc__filter_sex src-calc__filter_personalized hidden" id="src-calc__filter_sex" onClick="showBottomPanel('sex')"><span class="fas fa-female"></span><span class="fas fa-male"></span> <span class="src-calc__filter-value" id="src-calc__filter-value_sex">sex</span></button>
-                    <button type="button" class="src-calc__filter src-calc__filter_age src-calc__filter_personalized hidden" id="src-calc__filter_age" onClick="showBottomPanel('age')"><span class="fas fa-birthday-cake"></span> <span class="src-calc__filter-value" id="src-calc__filter-value_age">age</span></button>
-                    <button type="button" class="src-calc__filter src-calc__filter_time hidden" id="src-calc__filter_time" onClick="showBottomPanel('time')"><span class="fas fa-calendar-alt"></span> diagnosed</button>
-                    <button type="button" class="src-calc__filter src-calc__filter_stage hidden" id="src-calc__filter_stage" onClick="showBottomPanel('stage')"><span class="fas fa-tachometer-alt"></span> <span class="src-calc__filter-value" id="src-calc__filter-value_stage">stage</span></button>
-                    <button type="button" class="src-calc__filter src-calc__filter_grade hidden" id="src-calc__filter_grade" onClick="showBottomPanel('grade')"><span class="fas fa-braille"></span> <span class="src-calc__filter-value" id="src-calc__filter-value_grade">grade</span></button>
+                    <button type="button" class="src-calc__filter src-calc__filter_sex src-calc__filter_personalized hidden" id="src-calc__filter_sex" onClick="showBottomPanel('sex')"><span class="fas fa-male"></span><span class="fas fa-female"></span> sex<span class="src-calc__filter-value" id="src-calc__filter-value_sex"></span></button>
+                    <button type="button" class="src-calc__filter src-calc__filter_age src-calc__filter_personalized hidden" id="src-calc__filter_age" onClick="showBottomPanel('age')"><span class="fas fa-birthday-cake"></span> age<span class="src-calc__filter-value" id="src-calc__filter-value_age"></span></button>
+                    <button type="button" class="src-calc__filter src-calc__filter_time hidden" id="src-calc__filter_time" onClick="showBottomPanel('time')"><span class="fas fa-calendar-alt"></span> diagnosed<span class="src-calc__filter-value" id="src-calc__filter-value_diagnosed"></span></button>
+                    <button type="button" class="src-calc__filter src-calc__filter_stage hidden" id="src-calc__filter_stage" onClick="showBottomPanel('stage')"><span class="fas fa-tachometer-alt"></span> stage<span class="src-calc__filter-value" id="src-calc__filter-value_stage"></span></button>
+                    <button type="button" class="src-calc__filter src-calc__filter_grade hidden" id="src-calc__filter_grade" onClick="showBottomPanel('grade')"><span class="fas fa-braille"></span> grade<span class="src-calc__filter-value" id="src-calc__filter-value_grade"></span></button>
                   </div>
                   
                   <div class="scr-calc__footer">
@@ -94,7 +94,7 @@
                               <div class="scr-calc__form">
                                 <form>
                                   <fieldset class="scr-calc__fieldset scr-calc__fieldset_sex hidden" id="scr-calc__fieldset_sex">
-                                    <h2 class="scr-calc__fieldset-title"><span class="fas fa-female"></span><span class="fas fa-male"></span> Sex</h2>
+                                    <h2 class="scr-calc__fieldset-title"><span class="fas fa-male"></span><span class="fas fa-female"></span> Sex</h2>
                                     <div class="src-calc__select-wrapper">
                                       <button type="button" class="src-calc__select-button" value="F" onClick="updateBigCButtons(this, 'sex')">female</button>
                                       <button type="button" class="src-calc__select-button" value="M" onClick="updateBigCButtons(this, 'sex')">male</button>
@@ -108,13 +108,13 @@
                                   <fieldset class="scr-calc__fieldset scr-calc__fieldset_age hidden" id="scr-calc__fieldset_age">
                                     <h2 class="scr-calc__fieldset-title"><span class="fas fa-birthday-cake"></span> Age</h2>
                         
-                                    <div class="">
-                                    18
+                                    <div class="csr-calc__slider-wrapper">
+                                    <span class="csr-calc__slider-label">18</span>
                                     <span class="slidecontainer">
-                                      <input type="range" min="18" max="92" value="55" class="slider" id="myRange">
+                                      <input type="range" min="18" max="92" value="55" class="slider" id="csr-calc__slider_age">
                                     </span>
-                                    92
-                                    <div><span id="demo">Age</span> years old</div>
+                                    <span class="csr-calc__slider-label csr-calc__slider-label_right">92</span>
+                                    <div><span id="csr-calc__slider-label_age">Age</span> years old</div>
                                     </div>
                         
                                     <!-- 18<input type="range" min="18" max="92" name="age" id="age" class="scr-calc__input scr-calc__input_age" />92<br />
@@ -125,10 +125,10 @@
                                     <h2 class="scr-calc__fieldset-title"><span class="fas fa-tachometer-alt"></span> Stage</h2>
                         
                                     <div class="src-calc__select-wrapper">
-                                      <button type="button" class="src-calc__select-button" value="stage: 1" onClick="updateBigCButtons(this, 'stage')">stage: 1</button>
-                                      <button type="button" class="src-calc__select-button" value="stage: 2" onClick="updateBigCButtons(this, 'stage')">stage: 2</button>
-                                      <button type="button" class="src-calc__select-button" value="stage: 3" onClick="updateBigCButtons(this, 'stage')">stage: 3</button>
-                                      <button type="button" class="src-calc__select-button" value="stage: 4" onClick="updateBigCButtons(this, 'stage')">stage: 4</button>
+                                      <button type="button" class="src-calc__select-button" value="1" onClick="updateBigCButtons(this, 'stage')">1</button>
+                                      <button type="button" class="src-calc__select-button" value="2" onClick="updateBigCButtons(this, 'stage')">2</button>
+                                      <button type="button" class="src-calc__select-button" value="3" onClick="updateBigCButtons(this, 'stage')">3</button>
+                                      <button type="button" class="src-calc__select-button" value="4" onClick="updateBigCButtons(this, 'stage')">4</button>
                                     </div>
                         
                         
@@ -149,8 +149,8 @@
 
 
                                     <div class="src-calc__select-wrapper src-calc__select-wrapper_grade">
-                                      <button type="button" class="src-calc__select-button" value="Well" onClick="updateBigCButtons(this, 'grade')">Well differentiated</button>
-                                      <button type="button" class="src-calc__select-button" value="Moderately" onClick="updateBigCButtons(this, 'grade')">Moderately differentiated</button>
+                                      <button type="button" class="src-calc__select-button" value="Well" onClick="updateBigCButtons(this, 'grade')">Well-differentiated</button>
+                                      <button type="button" class="src-calc__select-button" value="Moderately" onClick="updateBigCButtons(this, 'grade')">Moderately-differentiated</button>
                                       <button type="button" class="src-calc__select-button" value="Poorly" onClick="updateBigCButtons(this, 'grade')">Poorly or undifferentiated</button>
                                     </div>
 
@@ -167,16 +167,16 @@
                                   <fieldset class="scr-calc__fieldset scr-calc__fieldset_time hidden" id="scr-calc__fieldset_time">
                                     <!--sliders have very little functionality that works across browsers. To get the full behavior you described,
                                     you will need to install a widget-->
-                                    <h2 class="scr-calc__fieldset-title"><span class="fas fa-calendar-alt"></span> Diagnosis</h2>
+                                    <h2 class="scr-calc__fieldset-title"><span class="fas fa-calendar-alt"></span> Diagnosed</h2>
 
 
-                                    <div class="">
-                                    1
+                                    <div class="csr-calc__slider-wrapper">
+                                    <span class="csr-calc__slider-label">Today</span>
                                     <span class="slidecontainer">
-                                      <input type="range" min="18" max="92" value="55" class="slider" id="diagnosisRange">
+                                      <input type="range" min="0" max="36" value="18" class="slider" id="csr-calc__slider_time">
                                     </span>
-                                    36
-                                    <div><span id="diagnosisMonths">X</span> <span id="diagnosisMonthsLabel">months</span> ago</div>
+                                    <span class="csr-calc__slider-label csr-calc__slider-label_right">36</span>
+                                    <div><span id="csr-calc__slider-label_time">X</span> <span id="diagnosisMonthsLabel">months</span> ago</div>
                                     </div>
 
 

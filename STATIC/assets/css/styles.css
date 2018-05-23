@@ -30,6 +30,11 @@ html {
     font-size: 14px;
   }
 }
+body {
+  margin: 0;
+  padding: 1rem;
+}
+
 a {
   color: #4D0092;
   text-decoration: none;
@@ -72,22 +77,23 @@ a:hover {
   position: relative;
   background: white;
   border: 1px solid #dddbda;
-  border-radius: 0.25rem;
+  border-radius: 5px;
   background-clip: padding-box;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .csr-layout__header {
   margin-bottom: 0.5rem;
+  margin-top: 1rem;
 }
 
 .scr-calc__main {
-  padding: 1rem;
+  padding: 1rem 0.5rem;
 }
 
 .csr-layout__footer {
   text-align: center;
-  font-family: "KiroLight", Arial, sans-serif;
+  font-family: "KiroLight", Arial, sans-serif !important;
 }
 
 .csr-start {
@@ -235,8 +241,9 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   border: 1px solid transparent;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  box-sizing: border-box;
 }
 .csr-layout__main_colon .scr-calc__header {
   background-color: #3566C2;
@@ -257,8 +264,8 @@ a:hover {
 
 .scr-calc__title {
   font-size: 1.25rem;
-  text-transform: uppercase;
-  font-family: "KiroLight", Arial, sans-serif;
+  text-transform: capitalize;
+  font-family: "KiroLight", Arial, sans-serif !important;
 }
 
 .src-calc__user-type {
@@ -320,6 +327,7 @@ a:hover {
   padding: 0;
   width: auto;
   overflow: visible;
+  font-family: "KiroLight", Arial, sans-serif !important;
   background: transparent;
   /* inherit font & color from ancestor */
   color: inherit;
@@ -337,7 +345,7 @@ a:hover {
 }
 
 .scr-calc__summary {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .scr-calc__fieldset {
@@ -345,7 +353,7 @@ a:hover {
 }
 
 .scr-calc__fieldset-title {
-  font-family: "KiroLight", Arial, sans-serif;
+  font-family: "KiroLight", Arial, sans-serif !important;
   text-align: center;
   margin-top: 0;
 }
@@ -355,7 +363,8 @@ a:hover {
   background: transparent;
   color: #fff;
   font-size: 1.25rem;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
+  margin-left: 56px;
 }
 
 .src-calc__cta-help-text {
@@ -380,8 +389,9 @@ a:hover {
   font-size: 4rem;
   line-height: 4.5rem;
   display: inline-block;
-  max-width: 50%;
+  width: 40%;
   vertical-align: middle;
+  text-align: center;
 }
 .csr-layout__main_colon .src-calc__percentage {
   color: #3566C2;
@@ -399,8 +409,10 @@ a:hover {
 .src-calc__rate {
   display: inline-block;
   vertical-align: middle;
-  max-width: 40%;
+  width: 55%;
+  box-sizing: border-box;
   padding-left: 1rem;
+  text-align: center;
 }
 
 .src-calc__description {
@@ -408,10 +420,26 @@ a:hover {
   justify-content: space-between;
   margin-top: 1rem;
   min-height: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dddbda;
+}
+
+.src-calc__desc-text {
+  width: 50%;
+  display: inline-block;
+}
+
+.src-calc__desc-visual {
+  width: 50%;
+  display: inline-block;
+  text-align: right;
 }
 
 .src-calc__desc-icon {
+  display: inline-block;
+  margin-bottom: 0.5rem;
   color: #ccc;
+  font-size: 1.5rem;
 }
 .csr-layout__main_colon .src-calc__desc-icon.src-calc__desc-icon_selected {
   color: #3566C2;
@@ -430,10 +458,12 @@ a:hover {
   position: relative;
   padding-right: 100px;
   min-height: 3rem;
+  font-size: 0.9rem;
 }
 
 .scr-calc__filters {
   min-height: 3rem;
+  font-size: 0.9rem;
 }
 
 .src-calc__filter {
@@ -442,6 +472,7 @@ a:hover {
   padding: 0;
   width: auto;
   overflow: visible;
+  font-family: "KiroLight", Arial, sans-serif !important;
   background: transparent;
   /* inherit font & color from ancestor */
   color: inherit;
@@ -456,12 +487,37 @@ a:hover {
   border-radius: 0.5rem;
   padding: 0.2rem 0.4rem;
   text-align: center;
+  padding: 0.3rem 0.6rem;
   margin-bottom: 0.5rem;
-  background-color: #545454;
   color: #fff;
 }
-.src-calc__filter_active {
-  background-color: #706E6B;
+.csr-layout__main_colon .src-calc__filter {
+  background-color: #3566C2;
+  color: #fff;
+}
+.csr-layout__main_breast .src-calc__filter {
+  background-color: #C24F72;
+  color: #fff;
+}
+.csr-layout__main_melanoma .src-calc__filter {
+  background-color: #C21824;
+  color: #fff;
+}
+.csr-layout__main_appendix .src-calc__filter {
+  background-color: #FFCC33;
+  color: #545454;
+}
+.csr-layout__main_colon .src-calc__filter_active {
+  background-color: #2a519a;
+}
+.csr-layout__main_breast .src-calc__filter_active {
+  background-color: #a5395a;
+}
+.csr-layout__main_melanoma .src-calc__filter_active {
+  background-color: #95121c;
+}
+.csr-layout__main_appendix .src-calc__filter_active {
+  background-color: #ffbf00;
 }
 .src-calc__filter.src-calc__cta-share {
   position: absolute;
@@ -475,6 +531,7 @@ a:hover {
   padding: 0;
   width: auto;
   overflow: visible;
+  font-family: "KiroLight", Arial, sans-serif !important;
   background: transparent;
   /* inherit font & color from ancestor */
   color: inherit;
@@ -489,8 +546,14 @@ a:hover {
   border-radius: 0.5rem;
   padding: 0.2rem 0.4rem;
   text-align: center;
+  display: inline-block;
   background-color: #4D0092;
   color: #fff;
+  padding: 0.3rem 0.6rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 .src-calc__select-button.active {
   background-color: #A9579A;
@@ -501,13 +564,22 @@ a:hover {
 
 /* bottom panel */
 .csr-layout__bottom-panel {
-  padding: 2rem 1rem;
+  padding: 2rem;
   background-color: #efefef;
   text-align: center;
-  min-height: 15rem;
+  min-height: 10rem;
+  margin-top: 1rem;
 }
 
 /* SLIDER */
+.csr-calc__slider-wrapper {
+  font-size: 1.1rem;
+}
+
+.csr-calc__slider-label_right {
+  margin-left: 0.1rem;
+}
+
 .slidecontainer {
   display: inline-block;
   width: 60%;
@@ -549,8 +621,8 @@ a:hover {
   /* Set a specific slider handle width */
   height: 25px;
   /* Slider handle height */
-  background: #4CAF50;
-  /* Green background */
+  background: #4D0092;
+  /* Purple background */
   cursor: pointer;
   /* Cursor on hover */
 }
@@ -560,8 +632,8 @@ a:hover {
   /* Set a specific slider handle width */
   height: 25px;
   /* Slider handle height */
-  background: #4CAF50;
-  /* Green background */
+  background: #4D0092;
+  /* Purple background */
   cursor: pointer;
   /* Cursor on hover */
 }
